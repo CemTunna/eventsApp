@@ -9,7 +9,11 @@ interface ButtonProps {
 }
 const EventsButton: React.FC<ButtonProps> = ({ children, link, onClick }) => {
   if (link) {
-    return <Link href={link}></Link>;
+    return (
+      <Link href={link}>
+        <a className={classes.link}>{children}</a>
+      </Link>
+    );
   }
   return <Button onClick={onClick}>{children}</Button>;
 };
