@@ -6,14 +6,8 @@ interface ButtonProps {
   children?: React.ReactNode;
   link?: string;
   onClick?: () => void;
-  type?: string;
 }
-const EventsButton: React.FC<ButtonProps> = ({
-  type,
-  children,
-  link,
-  onClick,
-}) => {
+const EventsButton: React.FC<ButtonProps> = ({ children, link, onClick }) => {
   if (link) {
     return (
       <Link href={link}>
