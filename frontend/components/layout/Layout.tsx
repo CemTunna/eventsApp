@@ -4,6 +4,8 @@ import { Grid } from '@mui/material';
 import styles from 'Styles/Layout.module.css';
 import Header from '../Header';
 import Footer from '../Footer';
+import Showcase from '../Showcase';
+import { useRouter } from 'next/router';
 interface LayoutProps {
   title?: string;
   keywords?: string;
@@ -16,6 +18,7 @@ const Layout: React.FC<LayoutProps> = ({
   description,
   children,
 }) => {
+  const router = useRouter();
   return (
     <Grid>
       <Head>
@@ -32,6 +35,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
       </Head>
       <Header />
+      {router.pathname === '/' && <Showcase />}
       <Grid className={styles.container}>{children}</Grid>
       <Footer />
     </Grid>
