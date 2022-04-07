@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 import React from 'react';
 import type { NextPage } from 'next';
-import Layout from '../components/layout/Layout';
+import Layout from 'Components/layout/Layout';
 
 const AboutPage: NextPage = () => {
   return (

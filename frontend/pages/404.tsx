@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import styles from '../styles/404.module.css';
+import Layout from 'Components/layout/Layout';
+import styles from 'Styles/404.module.css';
 import Link from 'next/link';
 import { Grid, Typography } from '@mui/material';
 const NotFoundPage = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Grid } from '@mui/material';
-import styles from '../../styles/Layout.module.css';
+import styles from 'Styles/Layout.module.css';
 import Header from '../Header';
 import Footer from '../Footer';
 interface LayoutProps {

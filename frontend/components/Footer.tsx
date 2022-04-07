@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../styles/Footer.module.css';
+import styles from 'Styles/Footer.module.css';
 import { Grid, Typography } from '@mui/material';
 const Footer = () => {
   return (

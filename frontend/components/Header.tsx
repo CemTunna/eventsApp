@@ -1,6 +1,6 @@
 import { List, ListItem, Grid } from '@mui/material';
 import React from 'react';
-import styles from '../styles/Header.module.css';
+import styles from 'Styles/Header.module.css';
 import Link from 'next/link';
 const Header = () => {
   return (
