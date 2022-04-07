@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Grid } from '@mui/material';
 import styles from '../../styles/Layout.module.css';
 import Header from '../Header';
+import Footer from '../Footer';
 interface LayoutProps {
   title?: string;
   keywords?: string;
@@ -32,6 +33,7 @@ const Layout: React.FC<LayoutProps> = ({
       </Head>
       <Header />
       <Grid className={styles.container}>{children}</Grid>
+      <Footer />
     </Grid>
   );
 };

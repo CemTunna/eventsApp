@@ -4,7 +4,7 @@ import styles from '../styles/Header.module.css';
 import Link from 'next/link';
 const Header = () => {
   return (
-    <Grid className={styles.header}>
+    <header className={styles.header}>
       <Grid className={styles.logo}>
         <Link href='/'>
           <a>Home</a>
@@ -19,7 +19,7 @@ const Header = () => {
           </ListItem>
         </List>
       </nav>
-    </Grid>
+    </header>
   );
 };
 
