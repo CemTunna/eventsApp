@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@mui/material';
-import classes from './button.module.css';
 interface ButtonProps {
   children?: React.ReactNode;
   link?: string;
@@ -11,7 +10,7 @@ const EventsButton: React.FC<ButtonProps> = ({ children, link, onClick }) => {
   if (link) {
     return (
       <Link href={link}>
-        <a className={classes.link}>{children}</a>
+        <a>{children}</a>
       </Link>
     );
   }
