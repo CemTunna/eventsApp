@@ -21,6 +21,9 @@ const EventItem: React.FC<EventItemProps> = ({ event }) => {
         <span>{event.date}</span> at {event.time}
         <Typography variant='h6'>{event.name}</Typography>
       </Grid>
+      <Grid>
+          
+      </Grid>
     </Grid>
   );
 };
