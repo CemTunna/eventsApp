@@ -4,13 +4,19 @@ import { Button } from '@mui/material';
 interface ButtonProps {
   children?: React.ReactNode;
   link?: string;
+  className?: string;
   onClick?: () => void;
 }
-const EventsButton: React.FC<ButtonProps> = ({ children, link, onClick }) => {
+const EventsButton: React.FC<ButtonProps> = ({
+  className,
+  children,
+  link,
+  onClick,
+}) => {
   if (link) {
     return (
       <Link href={link}>
-        <a>{children}</a>
+        <a className={className && className}>{children}</a>
       </Link>
     );
   }

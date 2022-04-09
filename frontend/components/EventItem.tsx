@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from 'Styles/EventItem.module.css';
 import { Event } from '../typings';
 import { Grid, Typography } from '@mui/material';
+import EventsButton from './Button';
 interface EventItemProps {
   event: Event;
 }
@@ -21,8 +21,10 @@ const EventItem: React.FC<EventItemProps> = ({ event }) => {
         <span>{event.date}</span> at {event.time}
         <Typography variant='h6'>{event.name}</Typography>
       </Grid>
-      <Grid>
-          
+      <Grid className={styles.link}>
+        <EventsButton link={`/events/${event.slug}`} className='btn'>
+          Details
+        </EventsButton>
       </Grid>
     </Grid>
   );
