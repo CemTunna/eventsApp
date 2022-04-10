@@ -4,4 +4,8 @@
 }
 .text {
   margin: 5px 0;
+  color: '#fff';
+}
+.link {
+  margin-top: 1rem;
 }

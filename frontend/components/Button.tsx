@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@mui/material';
 import styles from 'Styles/Button.module.css';
+import classNames from 'classnames';
 interface ButtonProps {
   children?: React.ReactNode;
   link?: string;
@@ -17,7 +18,13 @@ const EventsButton: React.FC<ButtonProps> = ({
   if (link) {
     return (
       <Link href={link}>
-        <a className={styles.btn}>{children}</a>
+        <a
+          className={
+            !className ? styles.btn : classNames(className, styles.btn)
+          }
+        >
+          {children}
+        </a>
       </Link>
     );
   }
