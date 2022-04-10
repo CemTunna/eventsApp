@@ -20,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
   const router = useRouter();
   return (
-    <Grid>
+    <Grid className={styles.wrapper}>
       <Head>
         <title>{title}</title>
         <meta

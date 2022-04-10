@@ -2,20 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(236, 92, 8);
-  color: #333;
-  height: 60px;
+  background: #242582;
   padding: 0 30px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.list a {
-  color: #333;
-  margin-right: 20px;
-}
-
-.list a:hover {
-  color: #000;
 }
 .list {
   display: flex;
@@ -23,16 +11,24 @@
   justify-content: center;
   list-style: none;
 }
-
+.list a {
+  margin-right: 20px;
+  background-color: #f64c72;
+  transition: all 0.2s ease-out;
+  color: #fff;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+}
+.list a:hover {
+  opacity: 0.6;
+}
 .logo {
-  color: rgb(241, 241, 241);
-  font-size: 20px;
+  font-size: 30px;
   text-transform: uppercase;
 }
 
 .logo a {
-  color: rgb(241, 241, 241);
-
+  color: #f64c72;
   font-weight: 900;
 }
 

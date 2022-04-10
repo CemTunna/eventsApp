@@ -1,3 +1,8 @@
+.wrapper {
+  display: 'flex';
+  flex-direction: 'column';
+}
+
 .container {
   margin: 60px auto;
   max-width: 1100px;

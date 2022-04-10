@@ -5,13 +5,14 @@ import { Typography } from '@mui/material';
 import { Event } from '../typings';
 import EventItem from 'Components/EventItem';
 import EventsButton from 'Components/Button';
+import Title from 'Components/Title';
 interface HomeProps {
   events: Event[];
 }
 const Home: NextPage<HomeProps> = ({ events }) => {
   return (
     <Layout>
-      <h1>Upcoming Events</h1>
+      <Title>Upcoming Events</Title>
       {events.length === 0 && (
         <Typography variant='h3'>No events to show</Typography>
       )}

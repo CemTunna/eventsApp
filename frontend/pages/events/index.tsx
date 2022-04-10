@@ -4,15 +4,17 @@ import { API_URL } from 'Config/index';
 import { Typography } from '@mui/material';
 import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
+import Title from 'Components/Title';
 interface EventsPageProps {
   events: Event[];
 }
 const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
   return (
     <Layout>
-      <h1>Events</h1>
-      {events.length === 0 && (
-        <Typography variant='h3'>No events to show</Typography>
+      {events.length === 0 ? (
+        <Title>No events to show</Title>
+      ) : (
+        <Title>Events</Title>
       )}
       {events.map((event) => (
         <EventItem key={event.id} event={event} />
@@ -28,7 +30,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      events: events.slice(0, 4),
+      events: events.slice(0, 0),
     },
   };
 };
