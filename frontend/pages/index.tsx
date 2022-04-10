@@ -16,7 +16,7 @@ const Home: NextPage<HomeProps> = ({ events }) => {
       {events.length === 0 && (
         <Typography variant='h3'>No events to show</Typography>
       )}
-      {events.map((event) => (
+      {events.map((event: Event) => (
         <EventItem key={event.id} event={event} />
       ))}
       {events.length > 0 && (
@@ -32,7 +32,6 @@ export default Home;
 export const getStaticProps = async () => {
   const res = await fetch(`${API_URL}/api/events`);
   const events = await res.json();
-
   return {
     props: {
       events,

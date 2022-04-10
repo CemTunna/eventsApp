@@ -1,32 +1,26 @@
 .event {
   position: relative;
-  padding-top: 40px;
+  padding-top: 3rem;
 }
-
-.event h3 {
-  font-size: 25px;
-}
-
-.event p {
-  margin: 10px 0;
+.title {
+  margin: 1rem 0;
 }
 
 .image {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .controls {
   position: absolute;
-  right: 30px;
+  right: 4rem;
   top: 0;
 }
 
 .delete {
-  margin-left: 20px;
-  color: red;
+  margin-left: 1rem;
+  color: #f64c72;
 }
 
 .back {
-  display: block;
-  margin-top: 40px;
+  margin-top: 1rem;
 }

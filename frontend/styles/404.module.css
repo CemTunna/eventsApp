@@ -2,3 +2,9 @@
   text-align: 'center';
   margin: 100px 0 200px;
 }
+.text {
+  font-size: 60px;
+}
+.btn {
+  margin-top: 2rem;
+}

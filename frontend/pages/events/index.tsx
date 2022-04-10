@@ -16,7 +16,7 @@ const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
       ) : (
         <Title>Events</Title>
       )}
-      {events.map((event) => (
+      {events.map((event: Event) => (
         <EventItem key={event.id} event={event} />
       ))}
     </Layout>
@@ -30,7 +30,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      events: events.slice(0, 0),
+      events: events.slice(0, 4),
     },
   };
 };

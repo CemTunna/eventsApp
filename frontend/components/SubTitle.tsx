@@ -2,16 +2,16 @@ import { Typography } from '@mui/material';
 import classNames from 'classnames';
 import React from 'react';
 import styles from 'Styles/Typography.module.css';
-interface TitleProps {
+interface SubTitleProps {
   children: React.ReactNode;
   className?: string;
 }
-const Title: React.FC<TitleProps> = ({ className, children }) => {
+const SubTitle: React.FC<SubTitleProps> = ({ className, children }) => {
   return (
     <Typography
-      variant='h4'
+      variant='h6'
       className={
-        !className ? styles.title : classNames(className, styles.title)
+        !className ? styles.subTitle : classNames(className, styles.subTitle)
       }
     >
       {children}
@@ -19,4 +19,4 @@ const Title: React.FC<TitleProps> = ({ className, children }) => {
   );
 };
 
-export default Title;
+export default SubTitle;
