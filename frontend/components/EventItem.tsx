@@ -14,11 +14,16 @@ const EventItem: React.FC<EventItemProps> = ({ event }) => {
         <Image
           width={170}
           height={100}
-          src={event.image ? event.image : '/images/event-default.png'}
+          src={
+            event.image
+              ? event.image.formats.thumbnail.url
+              : '/images/event-default.png'
+          }
         />
       </Grid>
       <Grid className={styles.info}>
-        <span>{event.date}</span> at {event.time}
+        <span>{new Date(event.date).toLocaleDateString('en-US')}</span> at{' '}
+        {event.time}
         <Typography variant='h6'>{event.name}</Typography>
       </Grid>
       <Grid className={styles.link}>

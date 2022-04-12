@@ -25,12 +25,12 @@ const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
 
 export default EventsPage;
 export const getServerSideProps = async () => {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events?_sort=date:ASC`);
   const events = await res.json();
 
   return {
     props: {
-      events: events.slice(0, 4),
+      events,
     },
   };
 };

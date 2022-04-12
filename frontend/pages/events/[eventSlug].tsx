@@ -28,12 +28,16 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
           </a>
         </Grid>
         <span>
-          {event.date} at {event.time}
+          {new Date(event.date).toLocaleDateString('en-US')} at {event.time}
         </span>
         <Title className={styles.title}>{event.name}</Title>
         {event.image && (
           <Grid className={styles.image}>
-            <Image src={event.image} width={960} height={600} />
+            <Image
+              src={event.image.formats.medium.url}
+              width={960}
+              height={600}
+            />
           </Grid>
         )}
         <SubTitle>Performers:</SubTitle>
@@ -53,7 +57,7 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
 export default EventPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(`${API_URL}/api/events/${params!.eventSlug}`);
+  const res = await fetch(`${API_URL}/events?slug=${params!.eventSlug}`);
   const events = await res.json();
 
   return {
@@ -64,7 +68,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 export const getStaticPaths = async () => {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events`);
   const events = await res.json();
   const paths = events.map((evt: Event) => ({
     params: {
