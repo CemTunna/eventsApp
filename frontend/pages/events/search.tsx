@@ -5,10 +5,13 @@ import { Typography } from '@mui/material';
 import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
-interface EventsPageProps {
+import { GetServerSideProps } from 'next';
+import qs from 'qs';
+
+interface SearchPageProps {
   events: Event[];
 }
-const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
+const SearchPage: NextPage<SearchPageProps> = ({ events }) => {
   return (
     <Layout>
       {events.length === 0 ? (
@@ -23,15 +26,26 @@ const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
   );
 };
 
-export default EventsPage;
-export const getStaticProps = async () => {
-  const res = await fetch(`${API_URL}/events?_sort=date:ASC`);
+export default SearchPage;
+export const getServerSideProps: GetServerSideProps = async ({
+  query: { term },
+}) => {
+  const query = qs.stringify({
+    _where: {
+      _or: [
+        { name_contains: term },
+        { performers_contains: term },
+        { description_contains: term },
+        { venue_contains: term },
+      ],
+    },
+  });
+  const res = await fetch(`${API_URL}/events?${query}`);
   const events = await res.json();
 
   return {
     props: {
       events,
     },
-    revalidate: 900,
   };
 };
