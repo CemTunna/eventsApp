@@ -1,23 +1,25 @@
 import type { NextPage } from 'next';
 import Layout from 'Components/layout/Layout';
 import { API_URL } from 'Config/index';
-import { Typography } from '@mui/material';
 import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
 import { GetServerSideProps } from 'next';
 import qs from 'qs';
-
+import { useRouter } from 'next/router';
+import EventsButton from 'Components/Button';
 interface SearchPageProps {
   events: Event[];
 }
 const SearchPage: NextPage<SearchPageProps> = ({ events }) => {
+  const router = useRouter();
   return (
-    <Layout>
+    <Layout title='Search Results'>
+      <EventsButton link='/events'>Go Back</EventsButton>
       {events.length === 0 ? (
         <Title>No events to show</Title>
       ) : (
-        <Title>Events</Title>
+        <Title>Search Results for {router.query.term}</Title>
       )}
       {events.map((event: Event) => (
         <EventItem key={event.id} event={event} />
