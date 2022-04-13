@@ -10,6 +10,9 @@
 .inpt {
   width: 100%;
 }
+.backBtn {
+  margin-bottom: 2rem;
+}
 .btn {
   background-color: #f64c72;
   color: #fff;

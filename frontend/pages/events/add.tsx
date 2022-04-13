@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 import Layout from 'Components/layout/Layout';
 import { useRouter } from 'next/router';
@@ -8,6 +10,7 @@ import EventsButton from 'Components/Button';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
+
 const AddEventPage = () => {
   const [values, setValues] = useState({
     name: '',
@@ -19,9 +22,27 @@ const AddEventPage = () => {
     description: '',
   });
   const router = useRouter();
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const isObjectEmpty = () => {
+    return Object.values(values).some((element) => element === '');
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(values);
+    if (isObjectEmpty()) {
+      toast.error('Plese fill all fields');
+    }
+    const res = await fetch(`${API_URL}/events`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+    if (!res.ok) {
+      toast.error('Something went wrong');
+    } else {
+      const data = await res.json();
+      router.push(`/events/${data.slug}`);
+    }
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,10 +50,11 @@ const AddEventPage = () => {
   };
   return (
     <Layout title='Add New Event'>
-      <EventsButton className={styles.btn} link='/events'>
+      <EventsButton className={styles.backBtn} link='/events'>
         Go Back
       </EventsButton>
       <Title className={styles.title}>Add Event</Title>
+      <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
         <Grid className={styles.grid}>
           <Grid>
