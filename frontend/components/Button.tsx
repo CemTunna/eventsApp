@@ -8,6 +8,7 @@ interface ButtonProps {
   link?: string;
   className?: string;
   onClick?: () => void;
+  type?: string;
 }
 const EventsButton: React.FC<ButtonProps> = ({
   className,

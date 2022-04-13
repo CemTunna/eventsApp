@@ -8,6 +8,8 @@ interface EventsInputProps {
   placeholder?: string;
   type?: string;
   value?: string;
+  name?: string;
+  id?: string;
 }
 const EventsInput: React.FC<EventsInputProps> = ({
   placeholder,
@@ -15,9 +17,13 @@ const EventsInput: React.FC<EventsInputProps> = ({
   onChange,
   type,
   value,
+  name,
+  id,
 }) => {
   return (
     <Input
+      name={name}
+      id={id}
       value={value}
       type={type}
       disableUnderline={true}
