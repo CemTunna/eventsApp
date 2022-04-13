@@ -22,6 +22,10 @@ const AddEventPage = () => {
     e.preventDefault();
     console.log('submit');
   };
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
   return (
     <Layout title='Add New Event'>
       <EventsButton link='/events'>Go Back</EventsButton>
@@ -30,7 +34,15 @@ const AddEventPage = () => {
         <Grid className={styles.grid}>
           <Grid>
             <InputLabel htmlFor='name'>Event Name</InputLabel>
-            <Input disableUnderline={true} />
+            <Input
+              className={styles.inpt}
+              value={values.name}
+              onChange={handleInputChange}
+              disableUnderline={true}
+              type='text'
+              id='name'
+              name='name'
+            />
           </Grid>
         </Grid>
       </form>

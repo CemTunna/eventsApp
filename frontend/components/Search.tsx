@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Grid, Input } from '@mui/material';
 import styles from 'Styles/Search.module.css';
+import EventsInput from './Input';
 const Search = () => {
   const [term, setTerm] = useState<string>();
   const router = useRouter();
@@ -11,10 +12,10 @@ const Search = () => {
     setTerm('');
   };
   return (
-    <Grid className={styles.search}>
+    <Grid>
       <form onSubmit={handleSubmit}>
-        <Input
-          disableUnderline={true}
+        <EventsInput
+          className={styles.input}
           type='text'
           value={term}
           placeholder='Search...'

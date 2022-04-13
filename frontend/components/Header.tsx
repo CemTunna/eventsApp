@@ -16,7 +16,7 @@ const Header = () => {
         <List className={styles.list}>
           <ListItem>
             <Link href='/events/add'>
-              <a>Add Even</a>
+              <a>Add Event</a>
             </Link>
             <Link href='/events'>
               <a>Events</a>

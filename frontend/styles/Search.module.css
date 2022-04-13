@@ -1,9 +1,4 @@
-.search input {
-  padding: 0.5rem;
+.input {
   width: 20rem;
-  border: 1px solid #f64c72;
-  border-radius: 10px;
-  color: #fff;
-  letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
 }
