@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import Layout from 'Components/layout/Layout';
 import { API_URL } from 'Config/index';
@@ -11,13 +13,26 @@ import Link from 'next/link';
 import Title from 'Components/Title';
 import SubTitle from 'Components/SubTitle';
 import Text from 'Components/Text';
+import { useRouter } from 'next/router';
 interface EventProps {
   event: Event;
 }
-const deleteEvent = () => {
-  console.log('delete');
-};
+
 const EventPage: React.FC<EventProps> = ({ event }) => {
+  const router = useRouter();
+  const deleteEvent = async () => {
+    if (confirm('Are you sure')) {
+      const res = await fetch(`${API_URL}/events/${event.id}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.message);
+      } else {
+        router.push('/events');
+      }
+    }
+  };
   return (
     <Layout>
       <Grid className={styles.event}>
@@ -31,6 +46,7 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
           {new Date(event.date).toLocaleDateString('en-US')} at {event.time}
         </span>
         <Title className={styles.title}>{event.name}</Title>
+        <ToastContainer />
         {event.image && (
           <Grid className={styles.image}>
             <Image
