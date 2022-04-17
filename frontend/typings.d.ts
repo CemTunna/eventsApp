@@ -8,5 +8,5 @@ export interface Event {
   performers: string;
   slug: string;
   time: string;
-  venue: String;
+  venue: string;
 }
