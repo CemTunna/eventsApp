@@ -17,6 +17,7 @@ import SubTitle from 'Components/SubTitle';
 import Image from 'next/image';
 import CustomModal from 'Components/customModal';
 import ImageUpload from 'Components/imageUpload';
+import { extractEventHandlers } from '@mui/base';
 interface EditEventPageProps {
   event: Event;
 }
@@ -62,8 +63,11 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  const imageUploaded = () => {
-    console.log('uploads');
+  const imageUploaded = async () => {
+    const res = await fetch(`${API_URL}/events/${event.id}`);
+    const data = await res.json();
+    setImgPreview(data.image.formats.thumbnail.url);
+    setOpen(false);
   };
   return (
     <Layout title='Add New Event'>
