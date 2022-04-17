@@ -15,6 +15,8 @@ import { Event } from 'typings';
 import moment from 'moment';
 import SubTitle from 'Components/SubTitle';
 import Image from 'next/image';
+import CustomModal from 'Components/customModal';
+import ImageUpload from 'Components/imageUpload';
 interface EditEventPageProps {
   event: Event;
 }
@@ -31,6 +33,8 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
   const [imgPreview, setImgPreview] = useState(
     event.image && event.image.formats.thumbnail.url
   );
+  const [open, setOpen] = React.useState(false);
+
   const router = useRouter();
   const isObjectEmpty = () => {
     return Object.values(values).some((element) => element === '');
@@ -57,6 +61,9 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+  };
+  const imageUploaded = () => {
+    console.log('uploads');
   };
   return (
     <Layout title='Add New Event'>
@@ -182,8 +189,16 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
         </Grid>
       )}
       <Grid>
-        <Button>Set Image</Button>
+        <Button onClick={() => setOpen(true)}>Set Image</Button>
       </Grid>
+      <CustomModal
+        handleOpen={() => setOpen(true)}
+        open={open}
+        handleClose={() => setOpen(false)}
+        title={'asdasd'}
+      >
+        <ImageUpload id={event.id} imageUploaded={imageUploaded} />
+      </CustomModal>
     </Layout>
   );
 };
