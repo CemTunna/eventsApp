@@ -14,11 +14,17 @@
   position: absolute;
   right: 4rem;
   top: 0;
+
+  display: flex;
 }
 
 .delete {
   margin-left: 1rem;
-  color: #f64c72;
+  color: #99738e;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .back {

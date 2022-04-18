@@ -4,16 +4,17 @@ import React from 'react';
 import Layout from 'Components/layout/Layout';
 import { API_URL } from 'Config/index';
 import { Event } from '../../typings';
-import { GetStaticProps, GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import styles from 'Styles/Event.module.css';
 import { Grid } from '@mui/material';
 import EventsButton from 'Components/eventsButton';
 import Image from 'next/image';
-import Link from 'next/link';
 import Title from 'Components/Title';
 import SubTitle from 'Components/SubTitle';
 import Text from 'Components/Text';
 import { useRouter } from 'next/router';
+import EditIcon from '@mui/icons-material/Edit';
+import ClearIcon from '@mui/icons-material/Clear';
 interface EventProps {
   event: Event;
 }
@@ -37,9 +38,12 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
     <Layout>
       <Grid className={styles.event}>
         <Grid className={styles.controls}>
-          <EventsButton link={`/events/edit/${event.id}`}> Edit</EventsButton>
+          <EventsButton link={`/events/edit/${event.id}`}>
+            Edit <EditIcon style={{ marginLeft: 10 }} fontSize='small' />
+          </EventsButton>
           <a href='#' className={styles.delete} onClick={deleteEvent}>
             Delete Event
+            <ClearIcon style={{ color: 'red', marginLeft: 10 }} />
           </a>
         </Grid>
         <span>

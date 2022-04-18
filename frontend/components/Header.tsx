@@ -18,9 +18,8 @@ const Header = () => {
           <ListItem>
             <Link href='/events/add'>
               <a>
-                {' '}
                 Add Event
-                <AddIcon style={{ marginLeft: 5 }} />
+                <AddIcon style={{ color: '#fff', marginLeft: 5 }} />
               </a>
             </Link>
           </ListItem>
