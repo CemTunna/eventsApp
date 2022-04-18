@@ -14,7 +14,6 @@ import {
 import Title from 'Components/Title';
 import PersonIcon from '@mui/icons-material/Person';
 import EventsInput from 'Components/Input';
-import EventsButton from 'Components/eventsButton';
 import Link from 'next/link';
 import EventsLink from 'Components/eventsLink';
 
@@ -24,9 +23,12 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (password !== passwordConfirm) {
       toast.error('Passwords do not match');
       return;
+    } else {
+      console.log({ username, email, password, passwordConfirm });
     }
   };
   return (
