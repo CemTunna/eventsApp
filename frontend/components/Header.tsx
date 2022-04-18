@@ -18,10 +18,17 @@ const Header = () => {
             <Link href='/events/add'>
               <a>Add Event</a>
             </Link>
+          </ListItem>
+          <ListItem>
             <Link href='/events'>
               <a>Events</a>
             </Link>
           </ListItem>
+          {/* <ListItem>
+            <Link href='/account/login'>
+              <a>Login</a>
+            </Link>
+          </ListItem> */}
         </List>
       </nav>
     </header>
