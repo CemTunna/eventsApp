@@ -16,6 +16,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import EventsInput from 'Components/Input';
 import EventsButton from 'Components/eventsButton';
 import Link from 'next/link';
+import EventsLink from 'Components/eventsLink';
 
 const RegisterPage = () => {
   const [username, setUsername] = useState('');
@@ -31,14 +32,25 @@ const RegisterPage = () => {
   return (
     <Layout title='Register'>
       <Grid className={styles.auth}>
-        <Title>Register</Title>
-        <PersonIcon style={{ color: '#fff' }} fontSize='large' />
+        <Grid
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <Title>Register</Title>
+          <PersonIcon
+            style={{ color: '#fff', marginLeft: 10 }}
+            fontSize='large'
+          />{' '}
+        </Grid>
         <ToastContainer />
         <Grid>
           <form onSubmit={handleSubmit}>
             <Grid>
               <InputLabel htmlFor='username'>Username </InputLabel>
               <EventsInput
+                className={styles.inpt}
                 type={'text'}
                 id='username'
                 value={username}
@@ -48,6 +60,7 @@ const RegisterPage = () => {
             <Grid>
               <InputLabel htmlFor='email'>Email Address</InputLabel>
               <EventsInput
+                className={styles.inpt}
                 type={'email'}
                 id='email'
                 value={email}
@@ -57,6 +70,7 @@ const RegisterPage = () => {
             <Grid>
               <InputLabel htmlFor='password'>Password </InputLabel>
               <EventsInput
+                className={styles.inpt}
                 type={'password'}
                 id='password'
                 value={password}
@@ -69,13 +83,16 @@ const RegisterPage = () => {
                 Confirm Password{' '}
               </InputLabel>
               <EventsInput
+                className={styles.inpt}
                 type={'password'}
                 id='passwordConfirm'
                 value={passwordConfirm}
                 onChange={(e) => setPasswordConfirm(e.target.value)}
               />
             </Grid>
-            <Button type='submit'>Login</Button>
+            <EventsLink type='submit' className={styles.btn}>
+              Register
+            </EventsLink>
             <Typography>
               Already have an account ?<Link href='/account/login'>Login</Link>
             </Typography>
