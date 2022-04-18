@@ -14,7 +14,6 @@
 .list a {
   border: 3px solid #f64c72;
   transition: all 0.2s ease-out;
-  color: #f64c72;
   padding: 0.2rem 1rem;
   border-radius: 5px;
   margin-left: 1rem;
@@ -27,6 +26,9 @@
   opacity: 0.6;
   /* color: #553d67;
   border-color: #553d67; */
+}
+.regular {
+  color: #f64c72;
 }
 .logo {
   font-size: 30px;
@@ -42,7 +44,10 @@
   margin-right: 1rem;
   margin-top: 0.2rem;
 }
-
+.login {
+  background-color: #f64c72;
+  color: #fff;
+}
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
