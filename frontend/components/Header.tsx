@@ -3,6 +3,7 @@ import React from 'react';
 import styles from 'Styles/Header.module.css';
 import Link from 'next/link';
 import Search from './Search';
+import AddIcon from '@mui/icons-material/Add';
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -16,7 +17,11 @@ const Header = () => {
         <List className={styles.list}>
           <ListItem>
             <Link href='/events/add'>
-              <a>Add Event</a>
+              <a>
+                {' '}
+                Add Event
+                <AddIcon style={{ marginLeft: 5 }} />
+              </a>
             </Link>
           </ListItem>
           <ListItem>
