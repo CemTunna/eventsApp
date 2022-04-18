@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import EventsButton from './Button';
+import EventsButton from './eventsLink';
 import { PER_PAGE } from 'Config/index';
 
 interface PaginationProps {

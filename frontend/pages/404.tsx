@@ -3,7 +3,7 @@ import Layout from 'Components/layout/Layout';
 import styles from 'Styles/404.module.css';
 import { Grid } from '@mui/material';
 import Title from 'Components/Title';
-import EventsButton from 'Components/Button';
+import EventsButton from 'Components/eventsLink';
 const NotFoundPage = () => {
   return (
     <Layout title='Page Not Found'>

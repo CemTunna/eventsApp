@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'Styles/Footer.module.css';
 import { Grid, Typography } from '@mui/material';
-import EventsButton from './Button';
+import EventsButton from './eventsLink';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
