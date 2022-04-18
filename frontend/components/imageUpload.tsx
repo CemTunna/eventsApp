@@ -23,7 +23,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ id, imageUploaded }) => {
     if (res.ok) {
       imageUploaded();
     }
-    console.log(formData);
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setImage(e.target.files[0]);
