@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
 import Layout from 'Components/layout/Layout';
-import { API_URL } from 'Config/index';
+import { API_URL, PER_PAGE } from 'Config/index';
 import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
 import Pagination from 'Components/pagination';
-import { PER_PAGE } from 'Config/index';
 interface EventsPageProps {
   events: Event[];
   total: number;
