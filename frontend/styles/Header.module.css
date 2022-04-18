@@ -8,20 +8,23 @@
 .list {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
 }
 .list a {
-  margin-right: 20px;
-  background-color: #f64c72;
+  border: 3px solid #f64c72;
   transition: all 0.2s ease-out;
-  color: #fff;
+  color: #f64c72;
   padding: 0.2rem 1rem;
   border-radius: 5px;
   margin-left: 1rem;
+  text-align: center;
+  width: 8rem;
 }
 .list a:hover {
   opacity: 0.6;
+  /* color: #553d67;
+  border-color: #553d67; */
 }
 .logo {
   font-size: 30px;
