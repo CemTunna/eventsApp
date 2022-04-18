@@ -41,7 +41,12 @@ const LoginPage = () => {
         <Grid>
           <form onSubmit={handleSubmit}>
             <Grid>
-              <InputLabel htmlFor='email'>Email Address</InputLabel>
+              <InputLabel
+                style={{ letterSpacing: ' 1px', color: '#553d67' }}
+                htmlFor='email'
+              >
+                Email Address
+              </InputLabel>
               <EventsInput
                 className={styles.inpt}
                 type={'email'}
@@ -51,7 +56,12 @@ const LoginPage = () => {
               />
             </Grid>
             <Grid>
-              <InputLabel htmlFor='password'>Password </InputLabel>
+              <InputLabel
+                style={{ letterSpacing: ' 1px', color: '#553d67' }}
+                htmlFor='password'
+              >
+                Password{' '}
+              </InputLabel>
               <EventsInput
                 className={styles.inpt}
                 type={'password'}

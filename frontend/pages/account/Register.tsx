@@ -48,7 +48,12 @@ const RegisterPage = () => {
         <Grid>
           <form onSubmit={handleSubmit}>
             <Grid>
-              <InputLabel htmlFor='username'>Username </InputLabel>
+              <InputLabel
+                htmlFor='username'
+                style={{ letterSpacing: ' 1px', color: '#553d67' }}
+              >
+                Username{' '}
+              </InputLabel>
               <EventsInput
                 className={styles.inpt}
                 type={'text'}
@@ -58,7 +63,12 @@ const RegisterPage = () => {
               />
             </Grid>
             <Grid>
-              <InputLabel htmlFor='email'>Email Address</InputLabel>
+              <InputLabel
+                htmlFor='email'
+                style={{ letterSpacing: ' 1px', color: '#553d67' }}
+              >
+                Email Address
+              </InputLabel>
               <EventsInput
                 className={styles.inpt}
                 type={'email'}
@@ -68,7 +78,12 @@ const RegisterPage = () => {
               />
             </Grid>
             <Grid>
-              <InputLabel htmlFor='password'>Password </InputLabel>
+              <InputLabel
+                htmlFor='password'
+                style={{ letterSpacing: ' 1px', color: '#553d67' }}
+              >
+                Password{' '}
+              </InputLabel>
               <EventsInput
                 className={styles.inpt}
                 type={'password'}
@@ -79,7 +94,10 @@ const RegisterPage = () => {
             </Grid>
 
             <Grid>
-              <InputLabel htmlFor='passwordConfirm'>
+              <InputLabel
+                htmlFor='passwordConfirm'
+                style={{ letterSpacing: ' 1px', color: '#553d67' }}
+              >
                 Confirm Password{' '}
               </InputLabel>
               <EventsInput
