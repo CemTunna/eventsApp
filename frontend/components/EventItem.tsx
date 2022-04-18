@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from 'Styles/EventItem.module.css';
 import { Event } from '../typings';
 import { Grid, Typography } from '@mui/material';
-import EventsButton from './eventsLink';
+import EventsButton from './eventsButton';
 interface EventItemProps {
   event: Event;
 }

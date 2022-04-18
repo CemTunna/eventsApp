@@ -4,7 +4,7 @@ import { API_URL } from 'Config/index';
 import { Typography } from '@mui/material';
 import { Event } from '../typings';
 import EventItem from 'Components/EventItem';
-import EventsButton from 'Components/eventsLink';
+import EventsButton from 'Components/eventsButton';
 import Title from 'Components/Title';
 interface HomeProps {
   events: Event[];

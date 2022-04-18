@@ -1,0 +1,14 @@
+.link {
+  display: inline-block;
+  background: transparent;
+  color: #f64c72;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+  margin-top: 1rem;
+}
+
+.link:hover {
+  opacity: 0.6;
+}

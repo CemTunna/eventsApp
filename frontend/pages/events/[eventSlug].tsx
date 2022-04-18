@@ -7,7 +7,7 @@ import { Event } from '../../typings';
 import { GetStaticProps, GetServerSideProps } from 'next';
 import styles from 'Styles/Event.module.css';
 import { Grid } from '@mui/material';
-import EventsButton from 'Components/eventsLink';
+import EventsButton from 'Components/eventsButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import Title from 'Components/Title';

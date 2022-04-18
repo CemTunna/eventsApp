@@ -1,20 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from 'Styles/Link.module.css';
+import styles from 'Styles/Button.module.css';
 import classNames from 'classnames';
-interface LinkProps {
+interface ButtonProps {
   children?: React.ReactNode;
   link?: string;
   className?: string;
   type?: string;
 }
-const EventsLink: React.FC<LinkProps> = ({ className, children, link }) => {
+const EventsButton: React.FC<ButtonProps> = ({ className, children, link }) => {
   return (
     <Link href={link!}>
       <a
-        className={
-          !className ? styles.link : classNames(className, styles.link)
-        }
+        className={!className ? styles.btn : classNames(className, styles.btn)}
       >
         {children}
       </a>
@@ -22,4 +20,4 @@ const EventsLink: React.FC<LinkProps> = ({ className, children, link }) => {
   );
 };
 
-export default EventsLink;
+export default EventsButton;
