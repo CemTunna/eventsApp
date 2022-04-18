@@ -15,6 +15,7 @@ import Text from 'Components/Text';
 import { useRouter } from 'next/router';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 interface EventProps {
   event: Event;
 }
@@ -46,7 +47,7 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
             <ClearIcon style={{ color: 'red', marginLeft: 10 }} />
           </a>
         </Grid>
-        <span>
+        <span style={{ color: '#fff' }}>
           {new Date(event.date).toLocaleDateString('en-US')} at {event.time}
         </span>
         <Title className={styles.title}>{event.name}</Title>
@@ -67,7 +68,7 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
         <SubTitle>Venue: {event.venue}</SubTitle>
         <Text>{event.address}</Text>
         <EventsButton link='/events' className={styles.back}>
-          Go Back
+          <ArrowBackIosNewIcon style={{ marginRight: 20 }} /> Go Back
         </EventsButton>
       </Grid>
     </Layout>

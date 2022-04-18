@@ -6,6 +6,7 @@ import { Event } from '../typings';
 import EventItem from 'Components/EventItem';
 import EventsButton from 'Components/eventsButton';
 import Title from 'Components/Title';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 interface HomeProps {
   events: Event[];
 }
@@ -20,8 +21,8 @@ const Home: NextPage<HomeProps> = ({ events }) => {
         <EventItem key={event.id} event={event} />
       ))}
       {events.length > 0 && (
-        <EventsButton link='/events' className='btn-secondary'>
-          View All Events
+        <EventsButton link='/events'>
+          View All Events <ArrowForwardIosIcon style={{ marginLeft: 20 }} />
         </EventsButton>
       )}
     </Layout>

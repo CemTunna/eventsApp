@@ -9,6 +9,7 @@
   transition: all 0.2s ease-out;
   display: flex;
   align-items: center;
+  max-width: 16rem;
 }
 
 .btn:hover {
