@@ -1,14 +1,17 @@
 import type { NextPage } from 'next';
 import Layout from 'Components/layout/Layout';
 import { API_URL } from 'Config/index';
-import { Typography } from '@mui/material';
 import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
+import Pagination from 'Components/pagination';
+import { PER_PAGE } from 'Config/index';
 interface EventsPageProps {
   events: Event[];
+  total: number;
+  page: number;
 }
-const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
+const EventsPage: NextPage<EventsPageProps> = ({ events, total, page }) => {
   return (
     <Layout>
       {events.length === 0 ? (
@@ -19,19 +22,30 @@ const EventsPage: NextPage<EventsPageProps> = ({ events }) => {
       {events.map((event: Event) => (
         <EventItem key={event.id} event={event} />
       ))}
+      <Pagination page={page} total={total} />
     </Layout>
   );
 };
 
 export default EventsPage;
-export const getStaticProps = async () => {
-  const res = await fetch(`${API_URL}/events?_sort=date:ASC`);
-  const events = await res.json();
+export const getServerSideProps = async ({ query: { page = 1 } }) => {
+  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE;
+
+  // fetch total
+  const totalRes = await fetch(`${API_URL}/events/count`);
+  const total = await totalRes.json();
+
+  // fetch events
+  const eventRes = await fetch(
+    `${API_URL}/events?_sort=date:ASC&_limit=${PER_PAGE}&_start=${start}`
+  );
+  const events = await eventRes.json();
 
   return {
     props: {
       events,
+      page: +page,
+      total,
     },
-    revalidate: 900,
   };
 };
