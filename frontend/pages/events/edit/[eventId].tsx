@@ -3,12 +3,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 import Layout from 'Components/layout/Layout';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { API_URL } from 'Config/index';
 import styles from 'Styles/Form.module.css';
 import EventsButton from 'Components/eventsButtonLink';
 import Title from 'Components/Title';
-import { Button, Grid, InputLabel, TextField, Typography } from '@mui/material';
+import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
 import { GetServerSideProps } from 'next';
 import { Event } from 'typings';
@@ -17,7 +15,8 @@ import SubTitle from 'Components/SubTitle';
 import Image from 'next/image';
 import CustomModal from 'Components/customModal';
 import ImageUpload from 'Components/imageUpload';
-import { extractEventHandlers } from '@mui/base';
+import EventsLink from 'Components/eventsLink';
+import { API_URL } from 'Config/index';
 interface EditEventPageProps {
   event: Event;
 }
@@ -193,7 +192,9 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
         </Grid>
       )}
       <Grid>
-        <Button onClick={() => setOpen(true)}>Set Image</Button>
+        <EventsLink className={styles.imgBtn} onClick={() => setOpen(true)}>
+          Set Image
+        </EventsLink>
       </Grid>
       <CustomModal
         handleOpen={() => setOpen(true)}

@@ -7,6 +7,17 @@
 .title {
   margin-bottom: 1rem;
 }
+.imgBtn {
+  background-color: #f64c72;
+  color: #fff;
+  margin-top: 1rem;
+  border: 1px solid #f64c72;
+}
+
+.imgBtn:hover {
+  opacity: 0.6;
+  color: #f64c72;
+}
 .inpt {
   width: 100%;
 }
