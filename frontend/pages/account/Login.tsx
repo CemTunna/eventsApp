@@ -14,7 +14,6 @@ import {
 import Title from 'Components/Title';
 import PersonIcon from '@mui/icons-material/Person';
 import EventsInput from 'Components/Input';
-import EventsButton from 'Components/eventsButtonLink';
 import Link from 'next/link';
 import EventsLink from 'Components/eventsLink';
 import AuthContext from 'Context/AuthContext';

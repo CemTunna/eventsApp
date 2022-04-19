@@ -18,11 +18,11 @@
   background-color: #553d67;
   color: #fff;
   margin-bottom: 1rem;
+  border: 2px solid #553d67;
 }
 .btn:hover {
   opacity: 0.9;
   color: #553d67;
-  border: 2px solid #553d67;
 }
 
 /* .auth input[type='text'],

@@ -2,16 +2,17 @@ import { Grid, Typography } from '@mui/material';
 import React from 'react';
 import type { NextPage } from 'next';
 import Layout from 'Components/layout/Layout';
+import Title from 'Components/Title';
+import SubTitle from 'Components/SubTitle';
+import Text from 'Components/Text';
 
 const AboutPage: NextPage = () => {
   return (
     <Layout title='About events'>
       <Grid>
-        <Typography variant='h1'>About</Typography>
-        <Typography variant='h5'>
-          This is an app to find latest events
-        </Typography>
-        <Typography variant='h5'>Version 1.0.0</Typography>
+        <Title size='h1'>About</Title>
+        <SubTitle>This is an app to find latest events</SubTitle>
+        <Text>Version 1.0.0</Text>
       </Grid>
     </Layout>
   );
