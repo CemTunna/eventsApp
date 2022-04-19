@@ -38,11 +38,11 @@ const Header = () => {
           ) : (
             <>
               <ListItem>
-                <Link href='/account/login'>
+                {/* <Link href='/account/login'>
                   <a className={styles.login}>
                     Login <LoginIcon style={{ color: '#fff', marginLeft: 5 }} />
                   </a>
-                </Link>
+                </Link> */}
               </ListItem>
             </>
           )}
