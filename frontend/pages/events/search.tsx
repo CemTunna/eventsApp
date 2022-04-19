@@ -7,7 +7,7 @@ import Title from 'Components/Title';
 import { GetServerSideProps } from 'next';
 import qs from 'qs';
 import { useRouter } from 'next/router';
-import EventsButton from 'Components/eventsButton';
+import EventsButton from 'Components/eventsButtonLink';
 interface SearchPageProps {
   events: Event[];
 }

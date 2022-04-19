@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { API_URL } from 'Config/index';
 import styles from 'Styles/Form.module.css';
-import EventsButton from 'Components/eventsButton';
+import EventsButton from 'Components/eventsButtonLink';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
