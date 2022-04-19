@@ -17,11 +17,15 @@ import EventsInput from 'Components/Input';
 import EventsButton from 'Components/eventsButton';
 import Link from 'next/link';
 import EventsLink from 'Components/eventsLink';
-
+import AuthContext from 'Context/AuthContext';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {};
+  const { login, error } = useContext(AuthContext);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    login({ email, password });
+  };
   return (
     <Layout title='Login'>
       <Grid className={styles.auth}>

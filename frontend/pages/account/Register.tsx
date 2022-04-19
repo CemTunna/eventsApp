@@ -16,19 +16,21 @@ import PersonIcon from '@mui/icons-material/Person';
 import EventsInput from 'Components/Input';
 import Link from 'next/link';
 import EventsLink from 'Components/eventsLink';
+import AuthContext from 'Context/AuthContext';
 
 const RegisterPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const { register, error } = useContext(AuthContext);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (password !== passwordConfirm) {
       toast.error('Passwords do not match');
       return;
     } else {
-      console.log({ username, email, password, passwordConfirm });
+      register({ username, email, password, passwordConfirm });
     }
   };
   return (
