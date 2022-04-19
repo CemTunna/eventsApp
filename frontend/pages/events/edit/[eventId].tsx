@@ -17,6 +17,7 @@ import CustomModal from 'Components/customModal';
 import ImageUpload from 'Components/imageUpload';
 import EventsLink from 'Components/eventsLink';
 import { API_URL } from 'Config/index';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 interface EditEventPageProps {
   event: Event;
 }
@@ -70,8 +71,8 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
   };
   return (
     <Layout title='Add New Event'>
-      <EventsButton className={styles.backBtn} link='/events'>
-        Go Back
+      <EventsButton link='/events' className={styles.backBtn}>
+        <ArrowBackIosNewIcon /> Go Back
       </EventsButton>
       <Title className={styles.title}>Edit Event</Title>
       <ToastContainer />
