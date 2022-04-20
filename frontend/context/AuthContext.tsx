@@ -1,9 +1,13 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { API_URL } from 'Config/index';
+import { NEXT_URL } from 'Config/index';
+interface AuthContextInterface {}
+interface ProviderProps {
+  children: React.ReactNode;
+}
 
-const AuthContext = createContext();
-export const AuthProvider = ({ children }) => {
+const AuthContext = createContext<AuthContextInterface | null>(null);
+export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   //   register
@@ -12,7 +16,22 @@ export const AuthProvider = ({ children }) => {
   };
   //   login
   const login = async ({ email: identifier, password }) => {
-    console.log({ identifier, password });
+    const res = await fetch(`${NEXT_URL}/api/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ identifier, password }),
+    });
+    console.log('ll', res);
+    const data = await res.json();
+
+    if (res.ok) {
+      setUser(data.user);
+      console.log('lll', data);
+    } else {
+      setError(data.message);
+    }
   };
   //   logout
   const logout = async () => {

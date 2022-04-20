@@ -25,6 +25,9 @@ const LoginPage = () => {
     e.preventDefault();
     login({ email, password });
   };
+  useEffect(() => {
+    error && toast.error(error);
+  }, [error]);
   return (
     <Layout title='Login'>
       <Grid className={styles.auth}>

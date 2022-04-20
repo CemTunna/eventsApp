@@ -5,7 +5,7 @@ import styles from 'Styles/Typography.module.css';
 interface TitleProps {
   children: React.ReactNode;
   className?: string;
-  size?: string;
+  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 const Title: React.FC<TitleProps> = ({ size, className, children }) => {
   return (

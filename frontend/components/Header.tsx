@@ -10,7 +10,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
-  console.log('user', user);
   return (
     <header className={styles.header}>
       <Grid className={styles.logo}>

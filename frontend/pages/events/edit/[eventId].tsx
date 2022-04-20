@@ -210,9 +210,13 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
 };
 
 export default EditEventPage;
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  req,
+}) => {
   const res = await fetch(`${API_URL}/events/${params && params.eventId}`);
   const event = await res.json();
+  console.log(req.headers.cookie);
   return {
     props: {
       event,
