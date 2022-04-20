@@ -10,6 +10,10 @@ const AuthContext = createContext<AuthContextInterface | null>(null);
 export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const router = useRouter();
+  useEffect(() => {
+    checkUserLoggedIn();
+  }, []);
   //   register
   const register = async (user) => {
     console.log(user);
@@ -28,18 +32,30 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user);
-      console.log('lll', data);
     } else {
       setError(data.message);
     }
   };
   //   logout
   const logout = async () => {
-    console.log('logout');
+    const res = await fetch(`${NEXT_URL}/api/logout`, {
+      method: 'POST',
+    });
+    if (res.ok) {
+      setUser(null);
+      router.push('/');
+    }
   };
   //   check if user logged in
-  const checkUserLoggedIn = async (user) => {
-    console.log('Check');
+  const checkUserLoggedIn = async () => {
+    const res = await fetch(`${NEXT_URL}/api/user`);
+    console.log('checked');
+    const data = await res.json();
+    if (res.ok) {
+      setUser(data.user);
+    } else {
+      setUser(null);
+    }
   };
   return (
     <AuthContext.Provider value={{ user, error, register, login, logout }}>
