@@ -19,6 +19,7 @@
   color: #fff;
   margin-bottom: 1rem;
   border: 2px solid #553d67;
+  width: 100%;
 }
 .btn:hover {
   opacity: 0.9;

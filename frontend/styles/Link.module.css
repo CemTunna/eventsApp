@@ -23,7 +23,6 @@
   transition: all 0.2s ease-out;
   display: flex;
   align-items: center;
-  max-width: 16rem;
   letter-spacing: 1px;
   text-transform: capitalize;
 }

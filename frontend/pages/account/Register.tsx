@@ -3,14 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import React, { useState, useEffect, useContext } from 'react';
 import Layout from 'Components/layout/Layout';
 import styles from 'Styles/Auth.module.css';
-import {
-  Button,
-  Box,
-  Modal,
-  Grid,
-  InputLabel,
-  Typography,
-} from '@mui/material';
+import { Grid, InputLabel, Typography } from '@mui/material';
 import Title from 'Components/Title';
 import PersonIcon from '@mui/icons-material/Person';
 import EventsInput from 'Components/Input';
@@ -24,6 +17,9 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const { register, error } = useContext(AuthContext);
+  useEffect(() => {
+    error && toast.error(error);
+  }, [error]);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (password !== passwordConfirm) {

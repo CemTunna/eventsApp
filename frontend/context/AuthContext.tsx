@@ -16,7 +16,21 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
   }, []);
   //   register
   const register = async (user) => {
-    console.log(user);
+    const res = await fetch(`${NEXT_URL}/api/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      setUser(data.user);
+      router.push('/account/dashboard');
+    } else {
+      setError(data.message);
+    }
   };
   //   login
   const login = async ({ email: identifier, password }) => {
@@ -27,11 +41,11 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
       },
       body: JSON.stringify({ identifier, password }),
     });
-    console.log('ll', res);
     const data = await res.json();
 
     if (res.ok) {
       setUser(data.user);
+      router.push('/events');
     } else {
       setError(data.message);
     }
