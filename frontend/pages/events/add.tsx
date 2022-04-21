@@ -168,3 +168,6 @@ const AddEventPage = () => {
 };
 
 export default AddEventPage;
+export const getServerSideProps=()=>{
+  
+}
