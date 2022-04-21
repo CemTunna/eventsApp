@@ -20,7 +20,8 @@
       "Components/*": ["components/*"],
       "Styles/*": ["styles/*"],
       "Config/*": ["config/*"],
-      "Context/*": ["context/*"]
+      "Context/*": ["context/*"],
+      "Helpers/*": ["helpers/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
