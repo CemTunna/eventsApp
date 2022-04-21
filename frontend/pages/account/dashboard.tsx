@@ -12,14 +12,20 @@ interface DashboardPageInterface {
   events: Event[];
 }
 const DashboardPage: React.FC<DashboardPageInterface> = ({ events }) => {
-  console.log(events);
+  const handleDelete = (id: string) => {
+    console.log(id);
+  };
   return (
     <Layout title='Dashboard'>
       <Grid>
         <Title>Dashboard</Title>
         <SubTitle>My events</SubTitle>
         {events.map((item: Event) => (
-          <DashboardEventItem event={item} />
+          <DashboardEventItem
+            key={item.id}
+            event={item}
+            handleDelete={handleDelete}
+          />
         ))}
       </Grid>
     </Layout>
