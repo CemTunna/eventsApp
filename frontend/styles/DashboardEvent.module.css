@@ -1,0 +1,13 @@
+.item {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #553d67;
+  margin-top: 1rem;
+  border: 1px solid #553d67;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

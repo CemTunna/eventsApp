@@ -7,6 +7,7 @@ import { Event } from 'typings';
 import { Grid } from '@mui/material';
 import Title from 'Components/Title';
 import SubTitle from 'Components/SubTitle';
+import DashboardEventItem from 'Components/DashboardEventItem';
 interface DashboardPageInterface {
   events: Event[];
 }
@@ -18,7 +19,7 @@ const DashboardPage: React.FC<DashboardPageInterface> = ({ events }) => {
         <Title>Dashboard</Title>
         <SubTitle>My events</SubTitle>
         {events.map((item: Event) => (
-          <h3>{item.name}</h3>
+          <DashboardEventItem event={item} />
         ))}
       </Grid>
     </Layout>
