@@ -201,7 +201,7 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
         handleOpen={() => setOpen(true)}
         open={open}
         handleClose={() => setOpen(false)}
-        title={'asdasd'}
+        title={'Set Your Image'}
       >
         <ImageUpload id={event.id} imageUploaded={imageUploaded} />
       </CustomModal>

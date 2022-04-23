@@ -2,16 +2,13 @@ import React, { useEffect } from 'react';
 import { Button, Box, Modal, Grid } from '@mui/material';
 import ReactDOM from 'react-dom';
 import SubTitle from './SubTitle';
+import styles from 'Styles/Modal.module.css';
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
 };
 interface CustomModalProps {
   title: string;
@@ -34,7 +31,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
     <Grid>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal open={open} onClose={handleClose}>
-        <Box sx={style}>
+        <Box sx={style} className={styles.container}>
           {title && <SubTitle>{title}</SubTitle>}
           {children}
         </Box>

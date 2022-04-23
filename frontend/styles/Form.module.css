@@ -37,12 +37,25 @@
   color: #fff;
   letter-spacing: 0.5px;
 }
-/* .form .file {
-  border: 1px #ccc solid;
-  background-color: #f4f4f4;
-  padding: 10px;
-} */
-
+.file {
+  background-color: #553d67;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.fileUp {
+  border: none;
+}
+.uploadBtn {
+  background: #f64c72;
+  color: #fff;
+  border: 1px solid #f64c72;
+  margin-top: 1rem;
+  width: 100%;
+}
+.uploadBtn:hover {
+  color: #fff;
+  background: #f64c72;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
