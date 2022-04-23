@@ -8,6 +8,7 @@ import { GetServerSideProps } from 'next';
 import qs from 'qs';
 import { useRouter } from 'next/router';
 import EventsButton from 'Components/eventsButtonLink';
+import styles from 'Styles/Event.module.css';
 interface SearchPageProps {
   events: Event[];
 }
@@ -15,7 +16,9 @@ const SearchPage: NextPage<SearchPageProps> = ({ events }) => {
   const router = useRouter();
   return (
     <Layout title='Search Results'>
-      <EventsButton link='/events'>Go Back</EventsButton>
+      <EventsButton link='/events' className={styles.backBtn}>
+        Go Back
+      </EventsButton>
       {events.length === 0 ? (
         <Title>No events to show</Title>
       ) : (
