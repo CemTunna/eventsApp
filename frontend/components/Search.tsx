@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Grid, Input } from '@mui/material';
 import styles from 'Styles/Search.module.css';
 import EventsInput from './Input';
+import SearchIcon from '@mui/icons-material/Search';
 const Search = () => {
   const [term, setTerm] = useState<string>();
   const router = useRouter();
@@ -15,6 +16,7 @@ const Search = () => {
     <Grid>
       <form onSubmit={handleSubmit}>
         <EventsInput
+          icon={<SearchIcon style={{ color: '#fff' }} fontSize='medium' />}
           className={styles.input}
           type='text'
           value={term}
