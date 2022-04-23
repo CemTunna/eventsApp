@@ -8,8 +8,13 @@ import UploadIcon from '@mui/icons-material/Upload';
 interface ImageUploadProps {
   id: string;
   imageUploaded: () => void;
+  token: string;
 }
-const ImageUpload: React.FC<ImageUploadProps> = ({ id, imageUploaded }) => {
+const ImageUpload: React.FC<ImageUploadProps> = ({
+  token,
+  id,
+  imageUploaded,
+}) => {
   const [image, setImage] = useState(null);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,6 +25,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ id, imageUploaded }) => {
     formData.append('field', 'image');
     const res = await fetch(`${API_URL}/upload`, {
       method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       body: formData,
     });
     if (res.ok) {

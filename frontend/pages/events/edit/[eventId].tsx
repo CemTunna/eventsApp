@@ -18,10 +18,13 @@ import ImageUpload from 'Components/imageUpload';
 import EventsLink from 'Components/eventsLink';
 import { API_URL } from 'Config/index';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { parseCookies } from 'Helpers/index';
+
 interface EditEventPageProps {
   event: Event;
+  token: string;
 }
-const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
+const EditEventPage: React.FC<EditEventPageProps> = ({ token, event }) => {
   const [values, setValues] = useState({
     name: event.name,
     performers: event.performers,
@@ -49,6 +52,7 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(values),
     });
@@ -203,7 +207,11 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ event }) => {
         handleClose={() => setOpen(false)}
         title={'Set Your Image'}
       >
-        <ImageUpload id={event.id} imageUploaded={imageUploaded} />
+        <ImageUpload
+          id={event.id}
+          imageUploaded={imageUploaded}
+          token={token}
+        />
       </CustomModal>
     </Layout>
   );
@@ -216,10 +224,11 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   const res = await fetch(`${API_URL}/events/${params && params.eventId}`);
   const event = await res.json();
-  console.log(req.headers.cookie);
+  const { token } = parseCookies(req);
   return {
     props: {
       event,
+      token,
     },
   };
 };

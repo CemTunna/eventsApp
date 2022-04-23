@@ -10,8 +10,11 @@ import EventsButton from 'Components/eventsButtonLink';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
-
-const AddEventPage = () => {
+import { parseCookies } from 'Helpers/index';
+interface AddEventPageProps {
+  token: string;
+}
+const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
   const [values, setValues] = useState({
     name: '',
     performers: '',
@@ -34,6 +37,7 @@ const AddEventPage = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(values),
     });
@@ -168,6 +172,11 @@ const AddEventPage = () => {
 };
 
 export default AddEventPage;
-export const getServerSideProps=()=>{
-  
-}
+export const getServerSideProps = ({ req }) => {
+  const { token } = parseCookies(req);
+  return {
+    props: {
+      token,
+    },
+  };
+};

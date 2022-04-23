@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import Layout from 'Components/layout/Layout';
@@ -22,23 +22,11 @@ interface EventProps {
 
 const EventPage: React.FC<EventProps> = ({ event }) => {
   const router = useRouter();
-  const deleteEvent = async () => {
-    if (confirm('Are you sure')) {
-      const res = await fetch(`${API_URL}/events/${event.id}`, {
-        method: 'DELETE',
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.message);
-      } else {
-        router.push('/events');
-      }
-    }
-  };
+
   return (
     <Layout>
       <Grid className={styles.event}>
-        <Grid className={styles.controls}>
+        {/* <Grid className={styles.controls}>
           <EventsButton link={`/events/edit/${event.id}`}>
             Edit <EditIcon style={{ marginLeft: 10 }} fontSize='small' />
           </EventsButton>
@@ -46,12 +34,12 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
             Delete Event
             <ClearIcon style={{ color: 'red', marginLeft: 10 }} />
           </a>
-        </Grid>
+        </Grid> */}
         <span style={{ color: '#fff' }}>
           {new Date(event.date).toLocaleDateString('en-US')} at {event.time}
         </span>
         <Title className={styles.title}>{event.name}</Title>
-        <ToastContainer />
+        {/* <ToastContainer /> */}
         {event.image && (
           <Grid className={styles.image}>
             <Image
