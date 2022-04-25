@@ -6,5 +6,8 @@
   font-size: 60px;
 }
 .btn {
+  background: #f64c72;
+  color: #fff;
   margin-top: 2rem;
+  width: 14rem;
 }

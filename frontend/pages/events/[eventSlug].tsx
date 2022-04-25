@@ -1,5 +1,3 @@
-// import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import Layout from 'Components/layout/Layout';
 import { API_URL } from 'Config/index';
@@ -13,8 +11,7 @@ import Title from 'Components/Title';
 import SubTitle from 'Components/SubTitle';
 import Text from 'Components/Text';
 import { useRouter } from 'next/router';
-import EditIcon from '@mui/icons-material/Edit';
-import ClearIcon from '@mui/icons-material/Clear';
+
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 interface EventProps {
   event: Event;
@@ -26,20 +23,10 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
   return (
     <Layout>
       <Grid className={styles.event}>
-        {/* <Grid className={styles.controls}>
-          <EventsButton link={`/events/edit/${event.id}`}>
-            Edit <EditIcon style={{ marginLeft: 10 }} fontSize='small' />
-          </EventsButton>
-          <a href='#' className={styles.delete} onClick={deleteEvent}>
-            Delete Event
-            <ClearIcon style={{ color: 'red', marginLeft: 10 }} />
-          </a>
-        </Grid> */}
         <span style={{ color: '#fff' }}>
           {new Date(event.date).toLocaleDateString('en-US')} at {event.time}
         </span>
         <Title className={styles.title}>{event.name}</Title>
-        {/* <ToastContainer /> */}
         {event.image && (
           <Grid className={styles.image}>
             <Image
