@@ -49,3 +49,12 @@
   background: #f64c72;
   color: #fff;
 }
+.btnHeader {
+  background: #f64c72;
+  color: #fff;
+  border-bottom: 2px solid #f64c72;
+}
+.btnHeader:hover {
+  color: #f64c72;
+  opacity: 1;
+}

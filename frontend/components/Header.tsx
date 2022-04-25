@@ -8,6 +8,9 @@ import LoginIcon from '@mui/icons-material/Login';
 import AuthContext from 'Context/AuthContext';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
+import EventsLink from './eventsLink';
+import styles2 from 'Styles/Link.module.css';
+import classNames from 'classnames';
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
   return (
@@ -44,11 +47,13 @@ const Header = () => {
                 </Link>
               </ListItem>
               <ListItem>
-                <Button onClick={() => logout()}>
-                  {' '}
-                  <LogoutIcon style={{ color: '#fff', marginLeft: 5 }} />
+                <EventsLink
+                  onClick={() => logout()}
+                  className={classNames(styles2.btn, styles2.btnHeader)}
+                >
                   Logout
-                </Button>
+                  <LogoutIcon style={{ color: '#fff', marginLeft: 5 }} />
+                </EventsLink>
               </ListItem>
             </>
           ) : (
