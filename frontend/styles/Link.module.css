@@ -58,3 +58,12 @@
   color: #f64c72;
   opacity: 1;
 }
+.btnConfirm {
+  background: #f64c72;
+  color: #fff;
+  border: 1px solid #f64c72;
+}
+.btnConfirm:hover {
+  opacity: 0.6;
+  background: #f64c72;
+}

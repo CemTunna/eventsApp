@@ -8,11 +8,13 @@ import { Event } from 'typings';
 
 interface DashboardEventItemProps {
   event: Event;
-  handleDelete: (id: string) => void;
+  handleClickOpen: () => void;
+  setId: (e: string) => void;
 }
 const DashboardEventItem: React.FC<DashboardEventItemProps> = ({
-  handleDelete,
   event,
+  handleClickOpen,
+  setId,
 }) => {
   return (
     <Grid>
@@ -22,7 +24,12 @@ const DashboardEventItem: React.FC<DashboardEventItemProps> = ({
           <EventsLink link={`/events/edit/${event.id}`}>
             <EditIcon className={styles.icon} />
           </EventsLink>
-          <EventsLink onClick={() => handleDelete(event.id)}>
+          <EventsLink
+            onClick={() => {
+              setId(event.id);
+              handleClickOpen();
+            }}
+          >
             <ClearIcon className={styles.icon} />
           </EventsLink>
         </Grid>
