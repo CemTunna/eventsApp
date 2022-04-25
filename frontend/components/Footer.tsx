@@ -9,7 +9,9 @@ const Footer = () => {
         Copyright &copy; Events 2022
       </Typography>
       <Grid>
-        <EventsLink link='/about'>About</EventsLink>
+        <EventsLink link='/about' className={styles.link}>
+          About
+        </EventsLink>
       </Grid>
     </footer>
   );
