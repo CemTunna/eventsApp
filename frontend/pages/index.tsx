@@ -3,10 +3,11 @@ import Layout from 'Components/layout/Layout';
 import { API_URL } from 'Config/index';
 import { Event } from '../typings';
 import EventItem from 'Components/EventItem';
-import EventsButtonLink from 'Components/eventsButtonLink';
 import Title from 'Components/Title';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import styles from 'Styles/Home.module.css';
+import EventsLink from 'Components/eventsLink';
+import classNames from 'classnames';
+import styles from 'Styles/Link.module.css';
 interface HomeProps {
   events: Event[];
 }
@@ -19,9 +20,12 @@ const Home: NextPage<HomeProps> = ({ events }) => {
         <EventItem key={event.id} event={event} />
       ))}
       {events.length > 0 && (
-        <EventsButtonLink link='/events' className={styles.btn}>
-          View All Events <ArrowForwardIosIcon />
-        </EventsButtonLink>
+        <EventsLink
+          link='/events'
+          className={classNames(styles.btn, styles.btnActive2)}
+        >
+          View All Events <ArrowForwardIosIcon style={{ marginLeft: 10 }} />
+        </EventsLink>
       )}
     </Layout>
   );

@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import styles2 from 'Styles/Link.module.css';
 import styles from 'Styles/EventItem.module.css';
 import { Event } from '../typings';
 import { Grid, Typography } from '@mui/material';
-import EventsButtonLink from './eventsButtonLink';
+import EventsLink from './eventsLink';
+import classNames from 'classnames';
 interface EventItemProps {
   event: Event;
 }
@@ -27,9 +29,12 @@ const EventItem: React.FC<EventItemProps> = ({ event }) => {
         <Typography variant='h6'>{event.name}</Typography>
       </Grid>
       <Grid className={styles.link}>
-        <EventsButtonLink link={`/events/${event.slug}`}>
+        <EventsLink
+          className={classNames(styles2.btn, styles2.btnEvents)}
+          link={`/events/${event.slug}`}
+        >
           Details
-        </EventsButtonLink>
+        </EventsLink>
       </Grid>
     </Grid>
   );

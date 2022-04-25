@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-import EventsButton from './eventsButtonLink';
 import { PER_PAGE } from 'Config/index';
+import classNames from 'classnames';
+import EventsLink from './eventsLink';
 
 interface PaginationProps {
   total: number;
@@ -13,10 +14,10 @@ const Pagination: React.FC<PaginationProps> = ({ total, page }) => {
   return (
     <Fragment>
       {page > 1 && (
-        <EventsButton link={`/events?page=${page - 1}`}>Prev</EventsButton>
+        <EventsLink link={`/events?page=${page - 1}`}>Prev</EventsLink>
       )}
       {page < lastPage && (
-        <EventsButton link={`/events?page=${page + 1}`}>Next</EventsButton>
+        <EventsLink link={`/events?page=${page + 1}`}>Next</EventsLink>
       )}
     </Fragment>
   );

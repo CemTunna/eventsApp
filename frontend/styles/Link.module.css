@@ -14,8 +14,6 @@
 }
 .btn {
   display: inline-block;
-  /* background: #f64c72; */
-  /* color: #fff; */
   padding: 0.5rem 2rem;
   cursor: pointer;
   border: 0;
@@ -31,4 +29,22 @@
   opacity: 0.6;
   /* color: #f64c72;
   border: 1px solid #f64c72; */
+}
+.btnActive {
+  background: #f64c72;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 12rem;
+}
+.btnActive2 {
+  background: #f64c72;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 14.3rem;
+}
+.btnEvents {
+  background: #f64c72;
+  color: #fff;
 }

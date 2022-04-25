@@ -7,9 +7,11 @@ import Title from 'Components/Title';
 import { GetServerSideProps } from 'next';
 import qs from 'qs';
 import { useRouter } from 'next/router';
-import EventsButton from 'Components/eventsButtonLink';
 import styles from 'Styles/Event.module.css';
+import styles2 from 'Styles/Link.module.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import EventsLink from 'Components/eventsLink';
+import classNames from 'classnames';
 interface SearchPageProps {
   events: Event[];
 }
@@ -17,9 +19,12 @@ const SearchPage: NextPage<SearchPageProps> = ({ events }) => {
   const router = useRouter();
   return (
     <Layout title='Search Results'>
-      <EventsButton link='/events' className={styles.back}>
-        <ArrowBackIosIcon style={{ color: '#fff' }} /> Go Back
-      </EventsButton>
+      <EventsLink
+        link='/events'
+        className={classNames(styles.back, styles2.btn)}
+      >
+        <ArrowBackIosIcon style={{ color: '#fff', marginRight: 10 }} /> Go Back
+      </EventsLink>
       {events.length === 0 ? (
         <Title>No events to show</Title>
       ) : (

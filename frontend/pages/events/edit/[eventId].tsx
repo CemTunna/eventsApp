@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Layout from 'Components/layout/Layout';
 import { useRouter } from 'next/router';
 import styles from 'Styles/Form.module.css';
-import EventsButton from 'Components/eventsButtonLink';
+import styles2 from 'Styles/Link.module.css';
+import classNames from 'classnames';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
@@ -75,9 +76,12 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ token, event }) => {
   };
   return (
     <Layout title='Add New Event'>
-      <EventsButton link='/events' className={styles.backBtn}>
-        <ArrowBackIosNewIcon /> Go Back
-      </EventsButton>
+      <EventsLink
+        link='/events'
+        className={classNames(styles2.btn, styles2.btnActive)}
+      >
+        <ArrowBackIosNewIcon style={{ marginRight: 10 }} /> Go Back
+      </EventsLink>
       <Title className={styles.title}>Edit Event</Title>
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>

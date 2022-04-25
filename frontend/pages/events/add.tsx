@@ -3,14 +3,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 import Layout from 'Components/layout/Layout';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { API_URL } from 'Config/index';
 import styles from 'Styles/Form.module.css';
-import EventsButton from 'Components/eventsButtonLink';
+import styles2 from 'Styles/Link.module.css';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
 import { parseCookies } from 'Helpers/index';
+import EventsLink from 'Components/eventsLink';
+import classNames from 'classnames';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { GetServerSideProps } from 'next';
 interface AddEventPageProps {
   token: string;
 }
@@ -54,9 +57,12 @@ const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
   };
   return (
     <Layout title='Add New Event'>
-      <EventsButton className={styles.backBtn} link='/events'>
-        Go Back
-      </EventsButton>
+      <EventsLink
+        className={classNames(styles2.btn, styles2.btnActive)}
+        link='/events'
+      >
+        <ArrowBackIosIcon style={{ marginRight: 10 }} /> Go Back
+      </EventsLink>
       <Title className={styles.title}>Add Event</Title>
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -172,7 +178,7 @@ const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
 };
 
 export default AddEventPage;
-export const getServerSideProps = ({ req }) => {
+export const getServerSideProps: GetServerSideProps = ({ req }) => {
   const { token } = parseCookies(req);
   return {
     props: {

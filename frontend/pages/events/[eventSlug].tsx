@@ -5,14 +5,15 @@ import { Event } from '../../typings';
 import { GetStaticProps } from 'next';
 import styles from 'Styles/Event.module.css';
 import { Grid } from '@mui/material';
-import EventsButton from 'Components/eventsButtonLink';
 import Image from 'next/image';
 import Title from 'Components/Title';
 import SubTitle from 'Components/SubTitle';
 import Text from 'Components/Text';
 import { useRouter } from 'next/router';
-
+import classNames from 'classnames';
+import styles2 from 'Styles/Link.module.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import EventsLink from 'Components/eventsLink';
 interface EventProps {
   event: Event;
 }
@@ -42,9 +43,12 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
         <Text>{event.description}</Text>
         <SubTitle>Venue: {event.venue}</SubTitle>
         <Text>{event.address}</Text>
-        <EventsButton link='/events' className={styles.back}>
-          <ArrowBackIosNewIcon style={{ marginRight: 20 }} /> Go Back
-        </EventsButton>
+        <EventsLink
+          link='/events'
+          className={classNames(styles2.btn, styles2.btnActive)}
+        >
+          <ArrowBackIosNewIcon style={{ marginRight: 10 }} /> Go Back
+        </EventsLink>
       </Grid>
     </Layout>
   );
