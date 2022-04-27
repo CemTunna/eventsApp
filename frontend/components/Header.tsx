@@ -17,7 +17,7 @@ const Header = () => {
     <header className={styles.header}>
       <Grid className={styles.logo}>
         <Link href='/'>
-          <a>Home</a>
+          <a>B.Events</a>
         </Link>
         <Search />
       </Grid>

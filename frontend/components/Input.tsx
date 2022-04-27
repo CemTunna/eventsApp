@@ -24,6 +24,7 @@ const EventsInput: React.FC<EventsInputProps> = ({
 }) => {
   return (
     <Input
+      autoComplete='off'
       startAdornment={
         icon && <InputAdornment position='start'>{icon}</InputAdornment>
       }
