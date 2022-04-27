@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Typography style={{ color: '#fff' }}>
-        Copyright &copy; Events 2022
+        Copyright &copy; B.Events 2022
       </Typography>
       <Grid>
         <EventsLink link='/about' className={styles.link}>

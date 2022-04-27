@@ -5,6 +5,8 @@ import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
 import Pagination from 'Components/pagination';
+import { Grid } from '@mui/material';
+import styles from 'Styles/Events.module.css';
 interface EventsPageProps {
   events: Event[];
   total: number;
@@ -18,9 +20,11 @@ const EventsPage: NextPage<EventsPageProps> = ({ events, total, page }) => {
       ) : (
         <Title>Events</Title>
       )}
-      {events.map((event: Event) => (
-        <EventItem key={event.id} event={event} />
-      ))}
+      <Grid className={styles.container}>
+        {events.map((event: Event) => (
+          <EventItem key={event.id} event={event} />
+        ))}
+      </Grid>
       <Pagination page={page} total={total} />
     </Layout>
   );
