@@ -19,7 +19,9 @@ const DashboardEventItem: React.FC<DashboardEventItemProps> = ({
   return (
     <Grid>
       <Grid className={styles.item}>
-        <EventsLink link={`/events/${event.slug}`}>{event.name}</EventsLink>
+        <EventsLink link={`/events/${event.slug}`} className={styles.itemName}>
+          {event.name}
+        </EventsLink>
         <Grid className={styles.icons}>
           <EventsLink link={`/events/edit/${event.id}`}>
             <EditIcon className={styles.icon} />

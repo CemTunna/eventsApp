@@ -11,11 +11,19 @@
 }
 .icons {
   margin-top: 0.4rem;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
 .icon {
+  color: #fff;
+}
+.itemName {
+  background: transparent;
+  color: #f64c72;
+  padding: 1rem;
+}
+.itemName:hover {
+  background-color: #f64c72;
   color: #fff;
 }
