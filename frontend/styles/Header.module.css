@@ -31,23 +31,20 @@
   color: #f64c72;
 }
 .logo {
-  font-size: 30px;
-  width: 30rem;
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.logo a {
+.title {
   color: #f64c72;
+
+  font-size: 30px;
   font-weight: 900;
   margin-right: 1rem;
-  margin-top: 0.2rem;
 }
-.login {
-  background-color: #f64c72;
-  color: #fff;
-}
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;

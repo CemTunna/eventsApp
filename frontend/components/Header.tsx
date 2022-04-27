@@ -1,7 +1,6 @@
 import { List, ListItem, Grid, Button } from '@mui/material';
 import React, { useContext } from 'react';
 import styles from 'Styles/Header.module.css';
-import Link from 'next/link';
 import Search from './Search';
 import AddIcon from '@mui/icons-material/Add';
 import LoginIcon from '@mui/icons-material/Login';
@@ -16,35 +15,36 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Grid className={styles.logo}>
-        <Link href='/'>
-          <a>B.Events</a>
-        </Link>
-        <Search />
+        <EventsLink link='/' className={styles.title}>
+          B.Events
+        </EventsLink>
+        <Grid style={{ marginTop: 10 }}>
+          <Search />
+        </Grid>
       </Grid>
       <nav>
         <List className={styles.list}>
           <ListItem>
-            <Link href='/events'>
-              <a className={styles.regular}>Events</a>
-            </Link>
+            <EventsLink link='/events' className={styles.regular}>
+              Events
+            </EventsLink>
           </ListItem>
           {user ? (
             <>
               <ListItem>
-                <Link href='/events/add'>
-                  <a className={styles.regular}>
-                    Add Event
-                    <AddIcon style={{ color: '#fff', marginLeft: 5 }} />
-                  </a>
-                </Link>
+                <EventsLink link='/events/add' className={styles.regular}>
+                  Add Event
+                  <AddIcon style={{ color: '#fff', marginLeft: 5 }} />
+                </EventsLink>
               </ListItem>
               <ListItem>
-                <Link href='/account/dashboard'>
-                  <a className={styles.regular}>
-                    Dashboard
-                    <DashboardIcon style={{ color: '#fff', marginLeft: 5 }} />
-                  </a>
-                </Link>
+                <EventsLink
+                  link='/account/dashboard'
+                  className={styles.regular}
+                >
+                  Dashboard
+                  <DashboardIcon style={{ color: '#fff', marginLeft: 5 }} />
+                </EventsLink>
               </ListItem>
               <ListItem>
                 <EventsLink
@@ -59,11 +59,12 @@ const Header = () => {
           ) : (
             <>
               <ListItem>
-                <Link href='/account/login'>
-                  <a className={styles.login}>
-                    Login <LoginIcon style={{ color: '#fff', marginLeft: 5 }} />
-                  </a>
-                </Link>
+                <EventsLink
+                  link='/account/login'
+                  className={classNames(styles2.btn, styles2.btnHeader)}
+                >
+                  Login <LoginIcon style={{ color: '#fff', marginLeft: 5 }} />
+                </EventsLink>
               </ListItem>
             </>
           )}
