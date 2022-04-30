@@ -48,6 +48,7 @@
 .btnEvents {
   background: #f64c72;
   color: #fff;
+  justify-content: center;
 }
 .btnHeader {
   background: #f64c72;

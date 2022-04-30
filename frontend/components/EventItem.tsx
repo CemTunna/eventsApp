@@ -12,25 +12,30 @@ interface EventItemProps {
 const EventItem: React.FC<EventItemProps> = ({ event }) => {
   return (
     <Grid className={styles.event}>
-      <Grid>
-        <Grid className={styles.img}>
-          <Image
-            width={170}
-            height={100}
-            src={
-              event.image
-                ? event.image.formats.thumbnail.url
-                : '/images/event-default.png'
-            }
-          />
-        </Grid>
+      <Grid className={styles.img}>
+        <Image
+          width={300}
+          height={200}
+          src={
+            event.image
+              ? event.image.formats.thumbnail.url
+              : '/images/event-default.png'
+          }
+        />
+      </Grid>
+      <Grid style={{ marginBottom: '1rem' }}>
         <Grid className={styles.info}>
-          <span>{new Date(event.date).toLocaleDateString('en-US')}</span> at{' '}
-          {event.time}
-          <Typography variant='h6'>{event.name}</Typography>
+          <Typography variant='h6' style={{ marginLeft: '1rem' }}>
+            {event.name}
+          </Typography>
+          <span>{new Date(event.date).toLocaleDateString('en-US')}</span>
+          <Typography>
+            {' '}
+            <span style={{ marginRight: '0.2rem' }}>at</span> {event.time}
+          </Typography>
         </Grid>
       </Grid>
-      <Grid className={styles.link}>
+      <Grid>
         <EventsLink
           className={classNames(styles2.btn, styles2.btnEvents)}
           link={`/events/${event.slug}`}
