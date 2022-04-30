@@ -6,7 +6,7 @@
   padding: 1rem 2rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: all 0.2s ease-out;
-  width: 20rem;
+  /* width: 20rem; */
   background-color: #242582;
 }
 .event:hover {

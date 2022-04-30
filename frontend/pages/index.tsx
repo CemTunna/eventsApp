@@ -8,6 +8,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 import styles from 'Styles/Link.module.css';
+import styles2 from 'Styles/Events.module.css';
 import { Grid } from '@mui/material';
 interface HomeProps {
   events: Event[];
@@ -17,7 +18,10 @@ const Home: NextPage<HomeProps> = ({ events }) => {
     <Layout>
       <Title>Upcoming Events</Title>
       {events.length === 0 && <Title>No events to show</Title>}
-      <Grid style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <Grid
+        style={{ display: 'flex', flexWrap: 'wrap' }}
+        className={styles2.container}
+      >
         {events.map((event: Event) => (
           <EventItem key={event.id} event={event} />
         ))}
