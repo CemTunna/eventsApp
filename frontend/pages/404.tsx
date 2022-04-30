@@ -4,7 +4,7 @@ import styles from 'Styles/Link.module.css';
 import { Grid } from '@mui/material';
 import Title from 'Components/Title';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import EventsLink from 'Components/eventsLink';
+import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 import styles2 from 'Styles/404.module.css';
 const NotFoundPage = () => {

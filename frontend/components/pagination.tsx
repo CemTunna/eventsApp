@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { PER_PAGE } from 'Config/index';
 import classNames from 'classnames';
-import EventsLink from './eventsLink';
+import EventsLink from './EventsLink';
 
 interface PaginationProps {
   total: number;

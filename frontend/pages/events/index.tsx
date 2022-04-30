@@ -4,7 +4,7 @@ import { API_URL, PER_PAGE } from 'Config/index';
 import { Event } from '../../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
-import Pagination from 'Components/pagination';
+import Pagination from 'Components/Pagination';
 import { Grid } from '@mui/material';
 import styles from 'Styles/Events.module.css';
 interface EventsPageProps {

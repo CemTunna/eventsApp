@@ -8,7 +8,7 @@ import Title from 'Components/Title';
 import PersonIcon from '@mui/icons-material/Person';
 import EventsInput from 'Components/Input';
 import Link from 'next/link';
-import EventsLink from 'Components/eventsLink';
+import EventsLink from 'Components/EventsLink';
 import AuthContext from 'Context/AuthContext';
 
 const RegisterPage = () => {

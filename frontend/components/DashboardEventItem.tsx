@@ -3,7 +3,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
 import styles from 'Styles/DashboardEvent.module.css';
 import { Grid } from '@mui/material';
-import EventsLink from './eventsLink';
+import EventsLink from './EventsLink';
 import { Event } from 'typings';
 
 interface DashboardEventItemProps {

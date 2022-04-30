@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 import styles from 'Styles/Event.module.css';
 import styles2 from 'Styles/Link.module.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import EventsLink from 'Components/eventsLink';
+import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 interface SearchPageProps {
   events: Event[];

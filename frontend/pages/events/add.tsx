@@ -10,7 +10,7 @@ import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
 import EventsInput from 'Components/Input';
 import { parseCookies } from 'Helpers/index';
-import EventsLink from 'Components/eventsLink';
+import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { GetServerSideProps } from 'next';

@@ -5,7 +5,7 @@ import { Event } from '../typings';
 import EventItem from 'Components/EventItem';
 import Title from 'Components/Title';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import EventsLink from 'Components/eventsLink';
+import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 import styles from 'Styles/Link.module.css';
 interface HomeProps {

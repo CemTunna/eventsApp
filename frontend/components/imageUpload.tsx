@@ -3,7 +3,7 @@ import { API_URL } from 'Config/index';
 import styles from 'Styles/Form.module.css';
 import Title from './Title';
 import { Grid, Input } from '@mui/material';
-import EventsLink from './eventsLink';
+import EventsLink from './EventsLink';
 import UploadIcon from '@mui/icons-material/Upload';
 interface ImageUploadProps {
   id: string;

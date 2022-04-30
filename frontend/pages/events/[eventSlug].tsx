@@ -13,7 +13,7 @@ import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import styles2 from 'Styles/Link.module.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import EventsLink from 'Components/eventsLink';
+import EventsLink from 'Components/EventsLink';
 interface EventProps {
   event: Event;
 }

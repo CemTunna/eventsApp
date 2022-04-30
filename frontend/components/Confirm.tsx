@@ -4,7 +4,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
-import EventsLink from './eventsLink';
+import EventsLink from './EventsLink';
 import styles from 'Styles/Link.module.css';
 import classNames from 'classnames';
 interface ConfirmProps {

@@ -17,7 +17,7 @@ export default async (req, res) => {
     if (backendRes.ok) {
       res.status(200).json({ user });
     } else {
-      res.satus(403).json({ message: 'User forbidden' });
+      res.status(403).json({ message: 'User forbidden' });
     }
   } else {
     res.setHeader('Allow', ['GET']);

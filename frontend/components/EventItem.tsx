@@ -4,7 +4,7 @@ import styles2 from 'Styles/Link.module.css';
 import styles from 'Styles/EventItem.module.css';
 import { Event } from '../typings';
 import { Grid, Typography } from '@mui/material';
-import EventsLink from './eventsLink';
+import EventsLink from './EventsLink';
 import classNames from 'classnames';
 interface EventItemProps {
   event: Event;
