@@ -39,12 +39,13 @@
 
 .title {
   color: #f64c72;
-
   font-size: 30px;
   font-weight: 900;
   margin-right: 1rem;
 }
-
+.title:hover {
+  opacity: 0.6;
+}
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -52,20 +53,15 @@
   }
 
   .list {
-    margin: 20px 0;
     flex-direction: column;
     text-align: center;
-  }
-
-  .list a {
-    margin-right: 0;
   }
 
   .logo {
     margin: 20px 0;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 950px) {
   .header {
     flex-direction: column;
   }

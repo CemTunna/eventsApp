@@ -1,3 +1,4 @@
+import React from 'react';
 import type { NextPage } from 'next';
 import Layout from 'Components/layout/Layout';
 import { API_URL, PER_PAGE } from 'Config/index';
@@ -7,13 +8,18 @@ import Title from 'Components/Title';
 import Pagination from 'Components/Pagination';
 import { Grid } from '@mui/material';
 import styles from 'Styles/Events.module.css';
-import EventsLink from 'Components/EventsLink';
 interface EventsPageProps {
   events: Event[];
   total: number;
   page: number;
+  start: number;
 }
-const EventsPage: NextPage<EventsPageProps> = ({ events, total, page }) => {
+const EventsPage: NextPage<EventsPageProps> = ({
+  start,
+  events,
+  total,
+  page,
+}) => {
   return (
     <Layout>
       {events.length === 0 ? (
@@ -51,6 +57,7 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
       events,
       page: +page,
       total,
+      start,
     },
   };
 };

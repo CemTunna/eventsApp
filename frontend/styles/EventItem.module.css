@@ -25,7 +25,11 @@
   color: #fff;
   font-weight: 500;
 }
-
+@media (max-width: 560px) {
+  .event {
+    margin: 1rem;
+  }
+}
 @media (max-width: 600px) {
   .event {
     flex-direction: column;

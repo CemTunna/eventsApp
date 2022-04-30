@@ -54,6 +54,7 @@
   background: #f64c72;
   color: #fff;
   border-bottom: 2px solid #f64c72;
+  margin-left: 2rem;
 }
 .btnHeader:hover {
   color: #fff;

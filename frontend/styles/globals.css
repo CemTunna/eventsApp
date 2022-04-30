@@ -16,6 +16,3 @@ a {
   transition: all 0.2s ease-out;
   letter-spacing: 1px;
 }
-a:hover {
-  opacity: 0.5;
-}
