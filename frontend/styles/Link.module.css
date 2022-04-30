@@ -68,3 +68,8 @@
   opacity: 0.6;
   background: #f64c72;
 }
+.btnpagination {
+  background: #f64c72;
+  color: #fff;
+  max-width: 8rem;
+}

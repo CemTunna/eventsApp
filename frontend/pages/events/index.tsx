@@ -7,6 +7,7 @@ import Title from 'Components/Title';
 import Pagination from 'Components/Pagination';
 import { Grid } from '@mui/material';
 import styles from 'Styles/Events.module.css';
+import EventsLink from 'Components/EventsLink';
 interface EventsPageProps {
   events: Event[];
   total: number;
@@ -25,6 +26,7 @@ const EventsPage: NextPage<EventsPageProps> = ({ events, total, page }) => {
           <EventItem key={event.id} event={event} />
         ))}
       </Grid>
+
       <Pagination page={page} total={total} />
     </Layout>
   );
