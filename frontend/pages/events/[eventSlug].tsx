@@ -22,7 +22,7 @@ const EventPage: React.FC<EventProps> = ({ event }) => {
   const router = useRouter();
 
   return (
-    <Layout>
+    <Layout title='Event Details'>
       <Grid className={styles.event}>
         <span style={{ color: '#fff' }}>
           {new Date(event.date).toLocaleDateString('en-US')} at {event.time}

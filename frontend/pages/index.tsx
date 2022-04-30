@@ -15,7 +15,7 @@ interface HomeProps {
 }
 const Home: NextPage<HomeProps> = ({ events }) => {
   return (
-    <Layout>
+    <Layout title='Home'>
       <Title>Upcoming Events</Title>
       {events.length === 0 && <Title>No events to show</Title>}
       <Grid

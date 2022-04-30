@@ -7,7 +7,6 @@ import Title from 'Components/Title';
 import { GetServerSideProps } from 'next';
 import qs from 'qs';
 import { useRouter } from 'next/router';
-import styles from 'Styles/Event.module.css';
 import styles2 from 'Styles/Link.module.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventsLink from 'Components/EventsLink';
@@ -21,7 +20,7 @@ const SearchPage: NextPage<SearchPageProps> = ({ events }) => {
     <Layout title='Search Results'>
       <EventsLink
         link='/events'
-        className={classNames(styles.back, styles2.btn)}
+        className={classNames(styles2.btn, styles2.btnActive)}
       >
         <ArrowBackIosIcon style={{ color: '#fff', marginRight: 10 }} /> Go Back
       </EventsLink>

@@ -21,7 +21,7 @@ const EventsPage: NextPage<EventsPageProps> = ({
   page,
 }) => {
   return (
-    <Layout>
+    <Layout title='Events'>
       {events.length === 0 ? (
         <Title>No events to show</Title>
       ) : (

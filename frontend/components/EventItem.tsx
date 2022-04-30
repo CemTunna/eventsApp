@@ -30,7 +30,6 @@ const EventItem: React.FC<EventItemProps> = ({ event }) => {
           </Typography>
           <span>{new Date(event.date).toLocaleDateString('en-US')}</span>
           <Typography>
-            {' '}
             <span style={{ marginRight: '0.2rem' }}>at</span> {event.time}
           </Typography>
         </Grid>

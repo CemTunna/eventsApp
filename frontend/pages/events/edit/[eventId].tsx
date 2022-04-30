@@ -75,7 +75,7 @@ const EditEventPage: React.FC<EditEventPageProps> = ({ token, event }) => {
     setOpen(false);
   };
   return (
-    <Layout title='Add New Event'>
+    <Layout title='Edit Event'>
       <EventsLink
         link='/events'
         className={classNames(styles2.btn, styles2.btnActive)}
