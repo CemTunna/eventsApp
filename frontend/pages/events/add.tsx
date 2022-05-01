@@ -44,6 +44,7 @@ const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
       },
       body: JSON.stringify(values),
     });
+
     if (!res.ok) {
       toast.error('Something went wrong');
     } else {
@@ -180,6 +181,7 @@ const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
 export default AddEventPage;
 export const getServerSideProps: GetServerSideProps = ({ req }) => {
   const { token } = parseCookies(req);
+  console.log('token', token);
   return {
     props: {
       token,

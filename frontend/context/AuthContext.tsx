@@ -63,7 +63,6 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
   //   check if user logged in
   const checkUserLoggedIn = async () => {
     const res = await fetch(`${NEXT_URL}/api/user`);
-    console.log('checked');
     const data = await res.json();
     if (res.ok) {
       setUser(data.user);
