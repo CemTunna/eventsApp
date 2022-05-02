@@ -1,7 +1,6 @@
-
 # Project Title
-Events app that people can create, update, delete their own events. They can see and edit their events via dashboard or they can look at someone else's and upcoming events.
 
+People can create, update, delete their own events. They can edit their events from dashboard or look at someone else's events and upcoming events.
 
 ## Features
 
@@ -11,15 +10,12 @@ Events app that people can create, update, delete their own events. They can see
 - HttpOnly Cookies
 - Pagination
 
-
 ## Tech Stack
 
 **Client:** Nextjs, Context API, Typescript, Material UI, Css
 
 **Server:** Headless CMS Strapi
 
-
 ## Authors
 
 - [@cemtunakoç](https://github.com/CemTunna)
-
