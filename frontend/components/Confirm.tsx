@@ -1,12 +1,9 @@
 import React from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
+import { Dialog, DialogActions, DialogTitle, Slide } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
-import EventsLink from './EventsLink';
 import styles from 'Styles/Link.module.css';
 import classNames from 'classnames';
+import EventsLink from './EventsLink';
 interface ConfirmProps {
   handleClose: () => void;
   setConfirm: (e: boolean) => void;
