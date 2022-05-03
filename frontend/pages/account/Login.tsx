@@ -64,7 +64,7 @@ const LoginPage: NextPage = () => {
                 type={'email'}
                 id='email'
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value!)}
               />
             </Grid>
             <Grid>
@@ -79,7 +79,7 @@ const LoginPage: NextPage = () => {
                 type={'password'}
                 id='password'
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value!)}
               />
             </Grid>
             <EventsLink type='submit' className={styles.btn}>

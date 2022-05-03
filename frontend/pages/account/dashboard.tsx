@@ -62,14 +62,15 @@ const DashboardPage: NextPage<DashboardPageInterface> = ({ events, token }) => {
           handleClose={handleClose}
           setConfirm={setConfirm}
         />
-        {events.map((item: Event) => (
-          <DashboardEventItem
-            key={item.id}
-            event={item}
-            handleClickOpen={handleClickOpen}
-            setId={setId}
-          />
-        ))}
+        {events &&
+          events.map((item: Event) => (
+            <DashboardEventItem
+              key={item.id}
+              event={item}
+              handleClickOpen={handleClickOpen}
+              setId={setId}
+            />
+          ))}
       </Grid>
     </Layout>
   );

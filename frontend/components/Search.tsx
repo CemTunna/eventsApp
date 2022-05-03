@@ -21,7 +21,7 @@ const Search = () => {
           type='text'
           value={term}
           placeholder='Search...'
-          onChange={(e) => setTerm(e.target.value)}
+          onChange={(e) => setTerm(e.target.value!)}
         />
       </form>
     </Grid>
