@@ -8,7 +8,7 @@ import styles2 from 'Styles/Link.module.css';
 import classNames from 'classnames';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
-import EventsInput from 'Components/Input';
+import EventsInput from 'Components/EventsInput';
 import { GetServerSideProps } from 'next';
 import { Event } from 'typings';
 import moment from 'moment';

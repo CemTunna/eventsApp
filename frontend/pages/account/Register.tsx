@@ -6,7 +6,7 @@ import styles from 'Styles/Auth.module.css';
 import { Grid, InputLabel, Typography } from '@mui/material';
 import Title from 'Components/Title';
 import PersonIcon from '@mui/icons-material/Person';
-import EventsInput from 'Components/Input';
+import EventsInput from 'Components/EventsInput';
 import Link from 'next/link';
 import EventsLink from 'Components/EventsLink';
 import AuthContext from 'Context/AuthContext';

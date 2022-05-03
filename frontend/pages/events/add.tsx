@@ -8,7 +8,7 @@ import styles from 'Styles/Form.module.css';
 import styles2 from 'Styles/Link.module.css';
 import Title from 'Components/Title';
 import { Button, Grid, InputLabel, TextField } from '@mui/material';
-import EventsInput from 'Components/Input';
+import EventsInput from 'Components/EventsInput';
 import { parseCookies } from 'Helpers/index';
 import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';

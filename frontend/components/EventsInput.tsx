@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, InputAdornment } from '@mui/material';
 import classNames from 'classnames';
-import styles from 'Styles/Input.module.css';
+import styles from 'Styles/EventsInput.module.css';
 interface EventsInputProps {
   className?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
