@@ -11,7 +11,11 @@ import EventsLink from './EventsLink';
 import styles2 from 'Styles/Link.module.css';
 import classNames from 'classnames';
 const Header = () => {
-  const { user, logout } = useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (!context) {
+    return null;
+  }
+  const { user, logout } = context;
   return (
     <header className={styles.header}>
       <Grid className={styles.logo}>

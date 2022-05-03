@@ -179,9 +179,10 @@ const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
 };
 
 export default AddEventPage;
-export const getServerSideProps: GetServerSideProps = ({ req }) => {
+
+export const getServerSideProps = (context: any) => {
+  const { req } = context;
   const { token } = parseCookies(req);
-  console.log('token', token);
   return {
     props: {
       token,

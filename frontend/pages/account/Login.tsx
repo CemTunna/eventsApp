@@ -20,7 +20,11 @@ import AuthContext from 'Context/AuthContext';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login, error } = useContext(AuthContext);
+
+  const context = useContext(AuthContext);
+
+  const { login, error } = context!;
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     login({ email, password });
@@ -80,7 +84,7 @@ const LoginPage = () => {
               Login
             </EventsLink>
             <Typography>
-              Don't have an account ?
+              Dont have an account ?
               <Link href='/account/register'> Register</Link>
             </Typography>
           </form>

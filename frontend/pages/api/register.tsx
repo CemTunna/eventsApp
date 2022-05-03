@@ -1,6 +1,6 @@
 import { API_URL } from 'Config/index';
 import cookie from 'cookie';
-export default async (req, res) => {
+export default async (req: any, res: any) => {
   if (req.method === 'POST') {
     const { username, email, password } = req.body;
     const backendRes = await fetch(`${API_URL}/auth/local/register`, {

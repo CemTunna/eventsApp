@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Button, Box, Modal, Grid } from '@mui/material';
 import ReactDOM from 'react-dom';
 import SubTitle from './SubTitle';
@@ -40,8 +40,10 @@ const CustomModal: React.FC<CustomModalProps> = ({
   );
 
   return (
-    isBrowser &&
-    ReactDOM.createPortal(content, document.getElementById('modal-root')!)
+    <Fragment>
+      {isBrowser &&
+        ReactDOM.createPortal(content, document.getElementById('modal-root')!)}
+    </Fragment>
   );
 };
 export default CustomModal;

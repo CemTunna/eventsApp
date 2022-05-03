@@ -34,7 +34,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       imageUploaded();
     }
   };
-  const handleFileChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleFileChange = (e: any) => {
     setImage(e.target.files[0]);
   };
   return (

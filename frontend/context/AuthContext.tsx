@@ -1,21 +1,29 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { NEXT_URL } from 'Config/index';
-interface AuthContextInterface {}
+import { User } from '../typings';
+interface AuthContextInterface {
+  user: User | null;
+  error: string | null;
+  register: (user: User) => void;
+  login: (info: { email: string; password: string }) => void;
+  logout: () => void;
+}
 interface ProviderProps {
   children: React.ReactNode;
 }
 
 const AuthContext = createContext<AuthContextInterface | null>(null);
+
 export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   useEffect(() => {
     checkUserLoggedIn();
   }, []);
   //   register
-  const register = async (user) => {
+  const register = async (user: any) => {
     const res = await fetch(`${NEXT_URL}/api/register`, {
       method: 'POST',
       headers: {
@@ -33,7 +41,8 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children }) => {
     }
   };
   //   login
-  const login = async ({ email: identifier, password }) => {
+  const login = async (info: any) => {
+    const { email: identifier, password } = info;
     const res = await fetch(`${NEXT_URL}/api/login`, {
       method: 'POST',
       headers: {

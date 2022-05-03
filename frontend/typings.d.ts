@@ -10,3 +10,9 @@ export interface Event {
   time: string;
   venue: string;
 }
+export interface User {
+  username: string;
+  email: string;
+  password: string;
+  passwordConfirm?: string;
+}

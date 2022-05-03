@@ -16,7 +16,8 @@ const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
-  const { register, error } = useContext(AuthContext);
+  const context = useContext(AuthContext);
+  const { register, error } = context!;
   useEffect(() => {
     error && toast.error(error);
   }, [error]);

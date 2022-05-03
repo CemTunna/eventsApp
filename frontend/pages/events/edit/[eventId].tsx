@@ -15,7 +15,7 @@ import moment from 'moment';
 import SubTitle from 'Components/SubTitle';
 import Image from 'next/image';
 import CustomModal from 'Components/CustomModal';
-import ImageUpload from 'Components/imageUpload';
+import ImageUpload from 'Components/ImageUpload';
 import EventsLink from 'Components/EventsLink';
 import { API_URL } from 'Config/index';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
