@@ -3,7 +3,7 @@ import { Dialog, DialogActions, DialogTitle, Slide } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
 import styles from 'Styles/Link.module.css';
 import classNames from 'classnames';
-import EventsLink from './EventsLink';
+import EventsLink from 'Components/EventsLink';
 interface ConfirmProps {
   handleClose: () => void;
   setConfirm: (e: boolean) => void;
