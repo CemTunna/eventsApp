@@ -13,11 +13,13 @@ import { parseCookies } from 'Helpers/index';
 import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { GetServerSideProps } from 'next';
+
+import type { NextPage } from 'next';
+
 interface AddEventPageProps {
   token: string;
 }
-const AddEventPage: React.FC<AddEventPageProps> = ({ token }) => {
+const AddEventPage: NextPage<AddEventPageProps> = ({ token }) => {
   const [values, setValues] = useState({
     name: '',
     performers: '',

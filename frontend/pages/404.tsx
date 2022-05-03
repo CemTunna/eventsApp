@@ -7,7 +7,9 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventsLink from 'Components/EventsLink';
 import classNames from 'classnames';
 import styles2 from 'Styles/404.module.css';
-const NotFoundPage = () => {
+import type { NextPage } from 'next';
+
+const NotFoundPage: NextPage = () => {
   return (
     <Layout title='Page Not Found'>
       <Grid className={styles.error}>

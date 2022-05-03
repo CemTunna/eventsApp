@@ -20,12 +20,13 @@ import EventsLink from 'Components/EventsLink';
 import { API_URL } from 'Config/index';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { parseCookies } from 'Helpers/index';
+import type { NextPage } from 'next';
 
 interface EditEventPageProps {
   event: Event;
   token: string;
 }
-const EditEventPage: React.FC<EditEventPageProps> = ({ token, event }) => {
+const EditEventPage: NextPage<EditEventPageProps> = ({ token, event }) => {
   const [values, setValues] = useState({
     name: event.name,
     performers: event.performers,

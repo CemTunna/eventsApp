@@ -10,8 +10,9 @@ import EventsInput from 'Components/Input';
 import Link from 'next/link';
 import EventsLink from 'Components/EventsLink';
 import AuthContext from 'Context/AuthContext';
+import type { NextPage } from 'next';
 
-const RegisterPage = () => {
+const RegisterPage: NextPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

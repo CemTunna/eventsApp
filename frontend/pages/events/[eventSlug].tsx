@@ -14,11 +14,13 @@ import classNames from 'classnames';
 import styles2 from 'Styles/Link.module.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import EventsLink from 'Components/EventsLink';
+import type { NextPage } from 'next';
+
 interface EventProps {
   event: Event;
 }
 
-const EventPage: React.FC<EventProps> = ({ event }) => {
+const EventPage: NextPage<EventProps> = ({ event }) => {
   const router = useRouter();
 
   return (

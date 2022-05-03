@@ -11,11 +11,13 @@ import SubTitle from 'Components/SubTitle';
 import DashboardEventItem from 'Components/DashboardEventItem';
 import { useRouter } from 'next/router';
 import Confirm from 'Components/Confirm';
+import type { NextPage } from 'next';
+
 interface DashboardPageInterface {
   events: Event[];
   token: string;
 }
-const DashboardPage: React.FC<DashboardPageInterface> = ({ events, token }) => {
+const DashboardPage: NextPage<DashboardPageInterface> = ({ events, token }) => {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const [confirm, setConfirm] = React.useState(false);
