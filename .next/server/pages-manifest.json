@@ -1,0 +1,20 @@
+{
+  "/404": "pages/404.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.html",
+  "/account/login": "pages/account/login.html",
+  "/account/register": "pages/account/register.html",
+  "/api/login": "pages/api/login.js",
+  "/api/logout": "pages/api/logout.js",
+  "/api/register": "pages/api/register.js",
+  "/api/user": "pages/api/user.js",
+  "/_error": "pages/_error.js",
+  "/events/add": "pages/events/add.js",
+  "/events/edit/[eventId]": "pages/events/edit/[eventId].js",
+  "/events/search": "pages/events/search.js",
+  "/": "pages/index.js",
+  "/events": "pages/events.js",
+  "/account/dashboard": "pages/account/dashboard.js",
+  "/events/[eventSlug]": "pages/events/[eventSlug].js"
+}

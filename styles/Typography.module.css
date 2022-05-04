@@ -1,0 +1,16 @@
+.title {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+.subTitle {
+  color: #f64c72;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.text {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 400;
+}

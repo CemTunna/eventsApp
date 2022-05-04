@@ -1,0 +1,26 @@
+.event {
+  position: relative;
+  padding-top: 3rem;
+}
+.title {
+  margin: 1rem 0;
+}
+
+.image {
+  margin-bottom: 1rem;
+}
+
+.controls {
+  position: absolute;
+  right: 4rem;
+  top: 0;
+  display: flex;
+}
+
+.delete {
+  margin-left: 1rem;
+  color: #99738e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
