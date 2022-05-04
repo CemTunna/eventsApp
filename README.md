@@ -9,12 +9,13 @@ People can create, update, delete their own events. They can edit their events f
 - Protected routes, login/logout
 - HttpOnly Cookies
 - Pagination
-
+- Image uploading
+ 
 ## Tech Stack
 
 **Client:** Nextjs, Context API, Typescript, Material UI, Css
 
-**Server:** Headless CMS Strapi
+**Server:** Headless CMS Strapi, PostgreSQL
 
 ## Demo
 
