@@ -1,0 +1,13 @@
+.error {
+  text-align: 'center';
+  margin: 100px 0 200px;
+}
+.text {
+  font-size: 60px;
+}
+.btn {
+  background: #f64c72;
+  color: #fff;
+  margin-top: 2rem;
+  width: 14rem;
+}
