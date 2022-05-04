@@ -16,6 +16,13 @@ People can create, update, delete their own events. They can edit their events f
 
 **Server:** Headless CMS Strapi
 
+## Demo
+
+https://eventsfrontend.netlify.app/ --> app
+you can use
+username: "john@gmail.com" , password: "123456"
+to check app
+
 ## Authors
 
 - [@cemtunakoç](https://github.com/CemTunna)
