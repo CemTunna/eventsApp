@@ -22,7 +22,7 @@ People can create, update, delete their own events. They can edit their events f
 https://eventsfrontend.netlify.app/ --> app,
 you can use
 username: "john@gmail.com" , password: "123456"
-to check app
+to login app
 
 ## Authors
 
