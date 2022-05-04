@@ -1,6 +1,6 @@
 # Project Title
 
-People can create, update, delete their own events. They can edit their events from dashboard or look at someone else's events and upcoming events.
+Events app that people can create, update, delete their own events. They can see and edit their events via dashboard or they can look at someone else's and upcoming events.
 
 ## Features
 
@@ -10,12 +10,9 @@ People can create, update, delete their own events. They can edit their events f
 - HttpOnly Cookies
 - Pagination
 
-## Tech Stack
+## Demo
 
-**Client:** Nextjs, Context API, Typescript, Material UI, Css
-
-**Server:** Headless CMS Strapi
-
-## Authors
-
-- [@cemtunakoç](https://github.com/CemTunna)
+https://eventsfrontend.netlify.app/ --> app
+you can use
+username: "john@gmail.com" , password: "123456"
+to check app

@@ -32,8 +32,9 @@ const EventsPage: NextPage<EventsPageProps> = ({
           <EventItem key={event.id} event={event} />
         ))}
       </Grid>
-
-      <Pagination page={page} total={total} />
+      <Grid style={{ marginTop: '1rem' }}>
+        <Pagination page={page} total={total} />
+      </Grid>
     </Layout>
   );
 };

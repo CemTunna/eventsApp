@@ -207,7 +207,6 @@ const EditEventPage: NextPage<EditEventPageProps> = ({ token, event }) => {
         </EventsLink>
       </Grid>
       <CustomModal
-        handleOpen={() => setOpen(true)}
         open={open}
         handleClose={() => setOpen(false)}
         title={'Set Your Image'}

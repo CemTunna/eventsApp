@@ -15,13 +15,12 @@ interface CustomModalProps {
   open: boolean;
   children: React.ReactNode;
   handleClose: () => void;
-  handleOpen: () => void;
 }
 const CustomModal: React.FC<CustomModalProps> = ({
   open,
   title,
   handleClose,
-  handleOpen,
+
   children,
 }) => {
   const [isBrowser, setIsBrowser] = React.useState(false);
@@ -29,7 +28,6 @@ const CustomModal: React.FC<CustomModalProps> = ({
 
   const content = (
     <Grid>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style} className={styles.container}>
           {title && <SubTitle>{title}</SubTitle>}
