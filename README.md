@@ -10,6 +10,7 @@ Events app that people can create, update, delete their own events. They can see
 - HttpOnly Cookies
 - Pagination
 - Image uploading
+- JSS
 
 ## Tech Stack
 
