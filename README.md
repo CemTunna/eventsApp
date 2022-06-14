@@ -1,5 +1,7 @@
 # Project Title
+Events sharing app
 
+## Overview
 Events app that people can create, update, delete their own events. They can see and edit their events via dashboard or they can look at someone else's and upcoming events.
 
 ## Features
@@ -16,7 +18,9 @@ Events app that people can create, update, delete their own events. They can see
 
 **Client:** Nextjs, Context API, Typescript, Material UI, Css
 
-**Server:** Headless CMS Strapi, PostgreSQL
+**Backend:** Headless CMS Strapi 
+
+**Server:** Heroku
 
 ## Demo
 
@@ -28,3 +32,4 @@ to login app
 ## Authors
 
 - [@cemtunakoç](https://github.com/CemTunna)
+
