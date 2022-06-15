@@ -20,7 +20,7 @@ Events app that people can create, update, delete their own events. They can see
 
 **Backend:** Headless CMS Strapi 
 
-**Server:** Heroku
+**Server:** Netlify
 
 ## Demo
 
