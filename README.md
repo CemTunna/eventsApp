@@ -24,10 +24,15 @@ Events app that people can create, update, delete their own events. They can see
 
 ## Demo
 
-https://eventsfrontend.netlify.app/ --> app,
+demo link --> https://eventsfrontend.netlify.app/  ,
 you can use
 username: "john@gmail.com" , password: "123456"
 to login app
+
+## Screenshots
+![Capture2](https://user-images.githubusercontent.com/60324303/173741438-32e6294b-ac58-4856-bec6-c1435bb87890.PNG)
+![Capture3](https://user-images.githubusercontent.com/60324303/173741445-af74e63b-3224-4dc7-bf4f-915cc9744385.PNG)
+![Capture5](https://user-images.githubusercontent.com/60324303/173741456-c29ae820-0bcd-4ae7-828c-6b9aa165bd91.PNG)
 
 ## Authors
 
